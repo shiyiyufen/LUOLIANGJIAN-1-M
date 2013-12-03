@@ -28,7 +28,7 @@
         <scene sceneID="qTg-8X-M1B">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Rdc-Ff-suA" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6SD-Ud-9B9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="icon_1.png" id="6SD-Ud-9B9">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -101,7 +101,7 @@
             <objects>
                 <tabBarController definesPresentationContext="YES" id="n0Z-cW-qtf" customClass="RootViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ybr-QN-1Xy"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="zkx-zF-wg6">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -139,6 +139,9 @@
             <point key="canvasLocation" x="629" y="-372"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_1.png" width="320" height="44"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

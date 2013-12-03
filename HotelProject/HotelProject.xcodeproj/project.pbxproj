@@ -27,6 +27,15 @@
 		2E189EAD184E27E700FDDCBB /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E189EAC184E27E700FDDCBB /* ViewController3.m */; };
 		2E189EB0184E27F200FDDCBB /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E189EAF184E27F200FDDCBB /* ViewController4.m */; };
 		2E189EB3184E27FB00FDDCBB /* ViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E189EB2184E27FB00FDDCBB /* ViewController5.m */; };
+		2E189EB9184E30BF00FDDCBB /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E189EB8184E30BF00FDDCBB /* UIViewController+Extension.m */; };
+		2E189EC0184E349200FDDCBB /* icon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E189EBE184E349200FDDCBB /* icon_1.png */; };
+		2E189EC1184E349200FDDCBB /* icon_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E189EBF184E349200FDDCBB /* icon_1@2x.png */; };
+		2E189EC4184E359200FDDCBB /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E189EC3184E359200FDDCBB /* Tool.m */; };
+		2E189EC7184E361B00FDDCBB /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E189EC5184E361B00FDDCBB /* icon_back.png */; };
+		2E189EC8184E361B00FDDCBB /* icon_back_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E189EC6184E361B00FDDCBB /* icon_back_1.png */; };
+		2E189ECE184E368A00FDDCBB /* success.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E189ECA184E368A00FDDCBB /* success.png */; };
+		2E189ECF184E368A00FDDCBB /* success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E189ECB184E368A00FDDCBB /* success@2x.png */; };
+		2E189ED0184E368A00FDDCBB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E189ECD184E368A00FDDCBB /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +80,19 @@
 		2E189EAF184E27F200FDDCBB /* ViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
 		2E189EB1184E27FB00FDDCBB /* ViewController5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController5.h; sourceTree = "<group>"; };
 		2E189EB2184E27FB00FDDCBB /* ViewController5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController5.m; sourceTree = "<group>"; };
+		2E189EB6184E30A100FDDCBB /* StaticData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticData.h; sourceTree = "<group>"; };
+		2E189EB7184E30BF00FDDCBB /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
+		2E189EB8184E30BF00FDDCBB /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
+		2E189EBE184E349200FDDCBB /* icon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_1.png; sourceTree = "<group>"; };
+		2E189EBF184E349200FDDCBB /* icon_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_1@2x.png"; sourceTree = "<group>"; };
+		2E189EC2184E359200FDDCBB /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		2E189EC3184E359200FDDCBB /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		2E189EC5184E361B00FDDCBB /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_back.png; sourceTree = "<group>"; };
+		2E189EC6184E361B00FDDCBB /* icon_back_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_back_1.png; sourceTree = "<group>"; };
+		2E189ECA184E368A00FDDCBB /* success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = success.png; sourceTree = "<group>"; };
+		2E189ECB184E368A00FDDCBB /* success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "success@2x.png"; sourceTree = "<group>"; };
+		2E189ECC184E368A00FDDCBB /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		2E189ECD184E368A00FDDCBB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +152,9 @@
 		2E189E73184E25C000FDDCBB /* HotelProject */ = {
 			isa = PBXGroup;
 			children = (
+				2E189EB6184E30A100FDDCBB /* StaticData.h */,
+				2E189EC9184E367500FDDCBB /* Libs */,
+				2E189EB5184E302300FDDCBB /* Images */,
 				2E189EB4184E280200FDDCBB /* TOOL */,
 				2E189E7C184E25C000FDDCBB /* AppDelegate.h */,
 				2E189E7D184E25C000FDDCBB /* AppDelegate.m */,
@@ -184,10 +209,36 @@
 		2E189EB4184E280200FDDCBB /* TOOL */ = {
 			isa = PBXGroup;
 			children = (
+				2E189EB7184E30BF00FDDCBB /* UIViewController+Extension.h */,
+				2E189EB8184E30BF00FDDCBB /* UIViewController+Extension.m */,
 				2E189EA2184E27B600FDDCBB /* BaseViewController.h */,
 				2E189EA3184E27B600FDDCBB /* BaseViewController.m */,
+				2E189EC2184E359200FDDCBB /* Tool.h */,
+				2E189EC3184E359200FDDCBB /* Tool.m */,
 			);
 			name = TOOL;
+			sourceTree = "<group>";
+		};
+		2E189EB5184E302300FDDCBB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2E189EC5184E361B00FDDCBB /* icon_back.png */,
+				2E189EC6184E361B00FDDCBB /* icon_back_1.png */,
+				2E189EBE184E349200FDDCBB /* icon_1.png */,
+				2E189EBF184E349200FDDCBB /* icon_1@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		2E189EC9184E367500FDDCBB /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				2E189ECA184E368A00FDDCBB /* success.png */,
+				2E189ECB184E368A00FDDCBB /* success@2x.png */,
+				2E189ECC184E368A00FDDCBB /* MBProgressHUD.h */,
+				2E189ECD184E368A00FDDCBB /* MBProgressHUD.m */,
+			);
+			name = Libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +317,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E189EC8184E361B00FDDCBB /* icon_back_1.png in Resources */,
 				2E189E86184E25C000FDDCBB /* Images.xcassets in Resources */,
 				2E189E78184E25C000FDDCBB /* InfoPlist.strings in Resources */,
+				2E189EC7184E361B00FDDCBB /* icon_back.png in Resources */,
+				2E189EC1184E349200FDDCBB /* icon_1@2x.png in Resources */,
+				2E189ECF184E368A00FDDCBB /* success@2x.png in Resources */,
+				2E189EC0184E349200FDDCBB /* icon_1.png in Resources */,
 				2E189E81184E25C000FDDCBB /* Main.storyboard in Resources */,
+				2E189ECE184E368A00FDDCBB /* success.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,11 +347,14 @@
 				2E189EA7184E27CA00FDDCBB /* ViewController1.m in Sources */,
 				2E189E84184E25C000FDDCBB /* RootViewController.m in Sources */,
 				2E189EA4184E27B600FDDCBB /* BaseViewController.m in Sources */,
+				2E189EC4184E359200FDDCBB /* Tool.m in Sources */,
 				2E189E7E184E25C000FDDCBB /* AppDelegate.m in Sources */,
 				2E189E7A184E25C000FDDCBB /* main.m in Sources */,
 				2E189EB3184E27FB00FDDCBB /* ViewController5.m in Sources */,
+				2E189ED0184E368A00FDDCBB /* MBProgressHUD.m in Sources */,
 				2E189EAA184E27DD00FDDCBB /* ViewController2.m in Sources */,
 				2E189EAD184E27E700FDDCBB /* ViewController3.m in Sources */,
+				2E189EB9184E30BF00FDDCBB /* UIViewController+Extension.m in Sources */,
 				2E189EB0184E27F200FDDCBB /* ViewController4.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +566,7 @@
 				2E189E9E184E25C000FDDCBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2E189E9F184E25C000FDDCBB /* Build configuration list for PBXNativeTarget "HotelProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +575,7 @@
 				2E189EA1184E25C000FDDCBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
