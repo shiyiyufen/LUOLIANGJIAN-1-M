@@ -21,18 +21,45 @@ static const int navBarViewTag = 100;
 }
 
 
-- (void)createBackgroundViewForBar:(UINavigationBar *)navigationBar type:(BarType)type
+- (void)createBackgroundViewForBar:(UINavigationBar *)navigationBar type:(BarType)type target:(id)target
 {
     switch (type)
     {
         case BarTypeDefault:
         {
-            UIView *view = [navigationBar viewWithTag:navBarViewTag];
-            if (view) [view removeFromSuperview];
+			for (UIView *view in navigationBar.subviews)
+			{
+				if (view.tag == navBarViewTag)
+				{
+					[view removeFromSuperview];
+				}
+			}
             break;
         }
         case BarViewTypeSearch:
         {
+			UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(5, (44-25)/2, 64, 25)];
+			img.image = NAME(@"icon_2");
+			[img setTag:navBarViewTag];
+			[navigationBar addSubview:img];
+			
+			UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+			btn.frame = CGRectMake(WIDTH - 10 - 40, (44-25)/2, 40, 25);
+			[btn setBackgroundImage:NAME(@"icon_3") forState:UIControlStateNormal];
+			[btn setBackgroundImage:NAME(@"icon_3_1") forState:UIControlStateHighlighted];
+			if (target) [btn addTarget:target action:@selector(didStartSearch) forControlEvents:UIControlEventTouchUpInside];
+			[btn setTag:navBarViewTag];
+			[navigationBar addSubview:btn];
+			
+			UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 160, 25)];
+			textField.borderStyle = UITextBorderStyleRoundedRect;
+			textField.layer.masksToBounds = YES;
+			textField.layer.cornerRadius = 12.5f;
+			textField.returnKeyType = UIReturnKeyDone;
+			textField.delegate = target;
+			[textField setCenter:CGPointMake(navigationBar.bounds.size.width/2 + 10, navigationBar.bounds.size.height/2)];
+			[textField setTag:navBarViewTag];
+			[navigationBar addSubview:textField];
             break;
         }
         default:
