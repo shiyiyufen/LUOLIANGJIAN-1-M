@@ -28,6 +28,7 @@
     [super viewDidLoad];
 	
 	[self reSetBannerView];
+    [self configureMenuView];
 	// Do any additional setup after loading the view.
 }
 
@@ -57,6 +58,21 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)configureMenuView
+{
+    [self.imageView_Product setImageWithURL:[NSURL URLWithString:@"http://img2.bdstatic.com/img/image/724e4dde71190ef76c6baa1a23c9f16fdfaaf5167b1.jpg"] placeholderImage:nil];
+    self.label_ProductTitle.text = @"龙凤呈祥吊坠";
+    
+    NSString *now = [NSString stringWithFormat:@"￥ %@",@"874"];
+    CGSize size0 = [now sizeWithFont:self.label_ProductPriceNow.font constrainedToSize:CGSizeMake(MAXFLOAT, self.label_ProductPriceNow.bounds.size.height) lineBreakMode:NSLineBreakByWordWrapping];
+    self.label_ProductPriceNow.frame = (CGRect){self.label_ProductPriceNow.frame.origin,size0.width,self.label_ProductPriceNow.frame.size.height};
+    self.label_ProductPriceNow.text = now;
+    NSString *pre = [NSString stringWithFormat:@"￥ %@",@"1024"];
+    CGSize size = [pre sizeWithFont:self.label_ProductPricePre.font constrainedToSize:CGSizeMake(MAXFLOAT, self.label_ProductPricePre.bounds.size.height) lineBreakMode:NSLineBreakByWordWrapping];
+    self.label_ProductPricePre.frame = (CGRect){CGRectGetMaxX(self.label_ProductPriceNow.frame) + SPACE_MID,self.label_ProductPricePre.frame.origin.y,size.width,self.label_ProductPricePre.frame.size.height};
+    self.label_ProductPricePre.text = pre;
 }
 
 -(void)reSetBannerView

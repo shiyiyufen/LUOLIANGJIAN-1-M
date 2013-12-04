@@ -14,8 +14,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        activeImage = [UIImage imageNamed:@"dote_sel.png"];
-        inactiveImage = [UIImage imageNamed:@"dote.png"];
+        activeImage = NAME(@"icon_6");
+        inactiveImage = NAME(@"icon_5");
+        
     }
     return self;
 }
@@ -37,8 +38,61 @@
 -(void) setCurrentPage:(NSInteger)page
 {
     [super setCurrentPage:page];
-    [self updateDots];
+    if (SEVEN)
+    {
+        for (UIView *su in self.subviews) {
+            [su removeFromSuperview];
+        }
+        [self setNeedsDisplay];
+    }else [self updateDots];
 }
+
+- (void)setNumberOfPages:(NSInteger)numberOfPages
+{
+    [super setNumberOfPages:numberOfPages];
+    if (SEVEN)
+    {
+        for (UIView *su in self.subviews) {
+            [su removeFromSuperview];
+        }
+        [self setNeedsDisplay];
+    }else [self updateDots];
+}
+
+- (void)drawRect:(CGRect)iRect
+{
+    int i;
+    CGRect rect;
+    UIImage *image;
+    
+    iRect = self.bounds;
+    
+    if (self.opaque) {
+        [self.backgroundColor set];
+        UIRectFill(iRect);
+    }
+    
+    UIImage *_activeImage = activeImage;
+    UIImage *_inactiveImage = inactiveImage;
+    CGFloat _kSpacing = 5.0f;
+    
+    if (self.hidesForSinglePage && self.numberOfPages == 1) {
+        return;
+    }
+    
+    rect.size.height = _activeImage.size.height;
+    rect.size.width = self.numberOfPages * _activeImage.size.width + (self.numberOfPages - 1) * _kSpacing;
+    rect.origin.x = floorf((iRect.size.width - rect.size.width) / 2.0);
+    rect.origin.y = floorf((iRect.size.height - rect.size.height) / 2.0);
+    rect.size.width = _activeImage.size.width;
+    
+    for (i = 0; i < self.numberOfPages; ++i) {
+        image = (i == self.currentPage) ? _activeImage : _inactiveImage;
+        [image drawInRect:rect];
+        rect.origin.x += _activeImage.size.width + _kSpacing;
+    }
+}
+
 
 /*
  // Only override drawRect: if you perform custom drawing.
