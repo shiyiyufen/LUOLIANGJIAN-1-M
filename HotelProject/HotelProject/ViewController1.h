@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
-
-@interface ViewController1 : BaseViewController
-
+#import "FBBannerView.h"
+@interface ViewController1 : BaseViewController<UITextFieldDelegate,FBBannerViewDelegate>
+@property (nonatomic,retain) FBBannerView		*bannerView;
+@property (nonatomic,retain) NSMutableArray		*bannerArray;
 @end

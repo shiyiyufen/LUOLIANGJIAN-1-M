@@ -16,7 +16,7 @@ typedef enum BarViewType
 @interface Tool : NSObject
 + (Tool *)shared;
 
-- (void)createBackgroundViewForBar:(UINavigationBar *)navigationBar type:(BarType)type;
+- (void)createBackgroundViewForBar:(UINavigationBar *)navigationBar type:(BarType)type target:(id)target;
 
 - (void)hideTip;
 - (void)showWaiting;

@@ -25,7 +25,8 @@ CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].siz
 #define IMAGE_URL			@"imageUrl"
 
 #import "UIViewController+Extension.h"
-//#import "Tool.h"
+#import "Tool.h"
+#import "UIImageView+WebCache.h"
 //#import "DataHelper.h"
 
 #endif
