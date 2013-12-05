@@ -8,6 +8,25 @@
 
 #import "ViewController1.h"
 
+
+@implementation HighLightBtn
+
+- (void)setHighlighted:(BOOL)highlighted
+{
+    if (highlighted)
+    {
+        self.backgroundColor = [UIColor lightGrayColor];
+        
+    }else self.backgroundColor = [UIColor clearColor];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didHighLightBtn:)])
+    {
+        [self.delegate didHighLightBtn:highlighted];
+    }
+}
+
+@end
+
 @interface ProductViewForScroll : UIView
 - (id)initProductViewForScrollWithOrginX:(CGFloat)x;
 - (void)configureViewWithUrls:(NSString *)url1 :(NSString *)url2 :(NSString *)url3;
@@ -108,7 +127,7 @@
 {
     [self.imageView_Product setImageWithURL:[NSURL URLWithString:@"http://img2.bdstatic.com/img/image/724e4dde71190ef76c6baa1a23c9f16fdfaaf5167b1.jpg"] placeholderImage:nil];
     self.label_ProductTitle.text = @"龙凤呈祥吊坠";
-    
+    self.btn_HighLight.delegate = self;
     NSString *now = [NSString stringWithFormat:@"￥ %@",@"874"];
     CGSize size0 = [now sizeWithFont:self.label_ProductPriceNow.font constrainedToSize:CGSizeMake(MAXFLOAT, self.label_ProductPriceNow.bounds.size.height) lineBreakMode:NSLineBreakByWordWrapping];
     self.label_ProductPriceNow.frame = (CGRect){self.label_ProductPriceNow.frame.origin,size0.width,self.label_ProductPriceNow.frame.size.height};
@@ -130,6 +149,7 @@
 	}
 	self.scrollView_Product.contentSize = CGSizeMake(self.scrollView_Product.bounds.size.width * products.count, 0);
 	self.pageControl_Product.numberOfPages = products.count;
+    self.pageControl_Product.type = 1;
 }
 
 - (void)configureHotelOrder
@@ -160,6 +180,18 @@
     _bannerView = [[FBBannerView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 140) imageArray:imageArray titleArray:nil];
     _bannerView.isAutoScroll = YES;
     [self.scrollView_Main addSubview:_bannerView];
+}
+
+- (IBAction)touchItem:(UIButton *)sender
+{
+     NSLog(@"tag:%d",[sender tag]);
+}
+
+
+#pragma mark - HighLight
+- (void)didHighLightBtn:(BOOL)highlight
+{
+    self.imageView_Sharp.image = highlight ? NAME(@"icon_7_1") : NAME(@"icon_7");
 }
 
 #pragma mark - UIScrollView

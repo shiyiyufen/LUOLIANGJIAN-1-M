@@ -29,7 +29,7 @@
 {
 	if (nil == _activeImage)
 	{
-		_activeImage = NAME(@"icon_6");
+		_activeImage = self.type ? NAME(@"icon_5") : NAME(@"icon_6");
 	}
 	return _activeImage;
 }
@@ -38,7 +38,7 @@
 {
 	if (nil == _inactiveImage)
 	{
-		_inactiveImage = NAME(@"icon_5");
+		_inactiveImage = self.type ? NAME(@"icon_8") : NAME(@"icon_5");
 	}
 	return _inactiveImage;
 }

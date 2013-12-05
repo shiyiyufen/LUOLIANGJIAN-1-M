@@ -12,5 +12,5 @@
 {
     
 }
-
+@property (nonatomic,assign) int type;//0,red/gray;1,white/gray
 @end
