@@ -7,6 +7,10 @@
 //
 
 #import "FBPageControl.h"
+@interface FBPageControl()
+@property (nonatomic,strong) UIImage* activeImage;
+@property (nonatomic,strong) UIImage* inactiveImage;
+@end
 
 @implementation FBPageControl
 
@@ -14,11 +18,29 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        activeImage = NAME(@"icon_6");
-        inactiveImage = NAME(@"icon_5");
+//        activeImage = NAME(@"icon_6");
+//        inactiveImage = NAME(@"icon_5");
         
     }
     return self;
+}
+
+- (UIImage *)activeImage
+{
+	if (nil == _activeImage)
+	{
+		_activeImage = NAME(@"icon_6");
+	}
+	return _activeImage;
+}
+
+- (UIImage *)inactiveImage
+{
+	if (nil == _inactiveImage)
+	{
+		_inactiveImage = NAME(@"icon_5");
+	}
+	return _inactiveImage;
 }
 
 -(void) updateDots
@@ -28,8 +50,8 @@
         if ([[self.subviews objectAtIndex:i]isKindOfClass:[UIImageView class]])
         {
             UIImageView* dot = (UIImageView *)[self.subviews objectAtIndex:i];
-            if (i == self.currentPage) dot.image = activeImage;
-            else dot.image = inactiveImage;
+            if (i == self.currentPage) dot.image = self.activeImage;
+            else dot.image = self.inactiveImage;
             dot.frame = CGRectMake(dot.frame.origin.x, dot.frame.origin.y, 11.f, 11.f);
         }
     }
@@ -72,8 +94,8 @@
         UIRectFill(iRect);
     }
     
-    UIImage *_activeImage = activeImage;
-    UIImage *_inactiveImage = inactiveImage;
+    UIImage *_activeImage = self.activeImage;
+    UIImage *_inactiveImage = self.inactiveImage;
     CGFloat _kSpacing = 5.0f;
     
     if (self.hidesForSinglePage && self.numberOfPages == 1) {

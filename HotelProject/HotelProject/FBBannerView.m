@@ -7,7 +7,7 @@
 //
 
 #import "FBBannerView.h"
-#import "FBPageControl.h"
+
 
 @interface FBBannerView ()
 @property (nonatomic,retain)FBPageControl *pageCtrl;

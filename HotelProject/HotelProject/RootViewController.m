@@ -8,7 +8,7 @@
 
 #import "RootViewController.h"
 
-@interface RootViewController ()
+@interface RootViewController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -16,7 +16,20 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];[self addRectVersionJudge];
+    [super viewDidLoad];
+	self.delegate = self;
+	[self addRectVersionJudge];
+	
+	NSDictionary *dict=[NSDictionary dictionaryWithObjects:
+                        [NSArray arrayWithObjects:
+						 [UIColor whiteColor],
+						 [UIFont boldSystemFontOfSize:17],
+						 [UIColor clearColor],nil] forKeys:
+                        [NSArray arrayWithObjects:
+						 UITextAttributeTextColor,
+						 UITextAttributeFont,
+						 UITextAttributeTextShadowColor,nil]];
+	self.navigationController.navigationBar.titleTextAttributes=dict;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -30,6 +43,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+	if (![NSStringFromClass([viewController class]) isEqualToString:@"ViewController1"])
+	{
+		tabBarController.title = viewController.tabBarItem.title;
+	}else tabBarController.title = @"";
+	
 }
 
 @end

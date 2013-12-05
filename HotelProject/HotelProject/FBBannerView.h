@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FBPageControl.h"
 @interface FBBannerView : UIView <UIScrollViewDelegate>
 {
     id delegate;

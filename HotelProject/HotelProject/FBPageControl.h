@@ -10,8 +10,7 @@
 
 @interface FBPageControl : UIPageControl
 {
-    UIImage* activeImage;
-    UIImage* inactiveImage;
+    
 }
 
 @end
