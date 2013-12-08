@@ -19,10 +19,11 @@ CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].siz
 #define IS_IOS_UPPER(x)     ([[UIDevice currentDevice].systemVersion compare:x options:NSNumericSearch] != NSOrderedAscending)
 #define DOCUMENTPATH		[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
-#define BASE_URL			@"http://guard.mi688.com/jsonsen/"
+#define BASE_URL			@"http://218.76.78.234:8080/mylhw/"
 #define IMAGE_INDEX			@"IMAGE_INDEX"
 #define USER_ID				@"householdId"
 #define IMAGE_URL			@"imageUrl"
+#define MAIN_STORYBOARD      [UIStoryboard storyboardWithName:@"Main" bundle:nil]
 
 #define SPACE_MID           10
 

@@ -320,6 +320,523 @@
             </objects>
             <point key="canvasLocation" x="419" y="-1372"/>
         </scene>
+        <!--Log View Controller-->
+        <scene sceneID="laT-2m-Zed">
+            <objects>
+                <viewController storyboardIdentifier="LogViewController" id="d64-pu-bGT" customClass="LogViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YWf-21-bq7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Kfs-JF-p6R">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_9.png" id="KRI-cx-CrR">
+                                        <rect key="frame" x="25" y="15" width="280" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_10.png" id="gWt-TU-EAC">
+                                        <rect key="frame" x="35" y="25" width="17" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入账号" minimumFontSize="17" id="VKV-yM-ovJ">
+                                        <rect key="frame" x="72" y="20" width="226" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="d64-pu-bGT" id="pcK-nG-haO"/>
+                                        </connections>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_9.png" id="Pu7-vJ-jAv">
+                                        <rect key="frame" x="25" y="70" width="280" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_11.png" id="zPr-Tb-hqQ">
+                                        <rect key="frame" x="35" y="80" width="17" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" minimumFontSize="17" id="ZgE-Dl-ugI">
+                                        <rect key="frame" x="72" y="75" width="226" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="d64-pu-bGT" id="Lfd-nJ-lAS"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oIC-jM-VTg">
+                                        <rect key="frame" x="168" y="120" width="137" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" backgroundImage="icon_12.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="icon_12_1.png"/>
+                                        <connections>
+                                            <action selector="action_Log:" destination="d64-pu-bGT" eventType="touchUpInside" id="GeZ-m2-NYv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="K7x-CP-Mpp">
+                                        <rect key="frame" x="25" y="120" width="137" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" backgroundImage="icon_13.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="icon_13_1.png"/>
+                                        <connections>
+                                            <action selector="action_Register:" destination="d64-pu-bGT" eventType="touchUpInside" id="R4m-8A-WeM"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_14.png" id="PLY-Uj-vqe">
+                                        <rect key="frame" x="15" y="212" width="243" height="193"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IU4-EF-bWk">
+                                        <rect key="frame" x="214" y="174" width="91" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="忘记密码？">
+                                            <color key="titleColor" red="0.19607844948768616" green="0.5372549295425415" blue="0.74901962280273438" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <view contentMode="scaleToFill" id="q11-eV-UhW">
+                                        <rect key="frame" x="0.0" y="397" width="320" height="93"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_15.png" id="XEV-2f-gUb">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MoU-Ss-qFi">
+                                                <rect key="frame" x="20" y="43" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" backgroundImage="icon_16.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="action_Sina:" destination="d64-pu-bGT" eventType="touchUpInside" id="Hsf-rz-voQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j7f-be-PeV">
+                                                <rect key="frame" x="80" y="43" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" backgroundImage="icon_17.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="action_QQ:" destination="d64-pu-bGT" eventType="touchUpInside" id="a4H-Nt-0c8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="scrollView_Main" destination="Kfs-JF-p6R" id="GhZ-tU-SHJ"/>
+                        <outlet property="textField_Name" destination="VKV-yM-ovJ" id="hAi-nh-KMF"/>
+                        <outlet property="textField_Pwd" destination="ZgE-Dl-ugI" id="sQx-sr-V0e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rqd-RI-1FM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1604" y="-2106"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="BO8-GW-0yc">
+            <objects>
+                <viewController storyboardIdentifier="RegisterViewController" id="79g-8h-TfY" customClass="RegisterViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jKt-ba-hl5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hDZ-c2-HZx">
+                                <rect key="frame" x="46" y="22" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="快速注册">
+                                    <color key="titleColor" red="0.80000007152557373" green="0.79607850313186646" blue="0.80000007152557373" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="action_RegisterFast:" destination="79g-8h-TfY" eventType="touchUpInside" id="wfr-T1-De5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jsG-5D-gqR">
+                                <rect key="frame" x="174" y="22" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="完整注册">
+                                    <color key="titleColor" red="0.80000007149999997" green="0.79607850309999995" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="action_RegisterFull:" destination="79g-8h-TfY" eventType="touchUpInside" id="mH9-eE-p0c"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="SYL-KD-lB1">
+                                <rect key="frame" x="0.0" y="68" width="320" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="4y6-BP-j49">
+                                        <rect key="frame" x="320" y="0.0" width="320" height="500"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_23.png" id="ROf-7t-5Pw">
+                                                <rect key="frame" x="20" y="0.0" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="sou-7f-1vD">
+                                                <rect key="frame" x="63" y="0.0" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="您的手机号码" minimumFontSize="17" id="B6J-CI-gqk">
+                                                <rect key="frame" x="71" y="5" width="222" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="79g-8h-TfY" id="TFV-tf-W9e"/>
+                                                </connections>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_18.png" id="tuq-AF-UtC">
+                                                <rect key="frame" x="20" y="50" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="wK7-6y-dc5">
+                                                <rect key="frame" x="63" y="50" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入注册账号" minimumFontSize="17" id="oE0-Xa-z6N">
+                                                <rect key="frame" x="71" y="55" width="222" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="79g-8h-TfY" id="GRd-Kh-3H8"/>
+                                                </connections>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_19.png" id="IY3-3M-xnm">
+                                                <rect key="frame" x="20" y="300" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="Rxm-8E-rvl">
+                                                <rect key="frame" x="63" y="300" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="您的邮箱" minimumFontSize="17" id="zwh-Gq-7Ap">
+                                                <rect key="frame" x="71" y="305" width="222" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="79g-8h-TfY" id="D2E-Po-DlY"/>
+                                                </connections>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_29.png" id="dar-Yl-OkD">
+                                                <rect key="frame" x="20" y="250" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="X9S-jr-6iQ">
+                                                <rect key="frame" x="63" y="250" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="地址" minimumFontSize="17" id="W6e-UE-4IC">
+                                                <rect key="frame" x="71" y="255" width="222" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="79g-8h-TfY" id="Edy-Gc-jzO"/>
+                                                </connections>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_20.png" id="krT-Nj-wyr">
+                                                <rect key="frame" x="20" y="350" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="btI-h2-sp2">
+                                                <rect key="frame" x="63" y="350" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码设置" minimumFontSize="17" id="R9S-74-eur">
+                                                <rect key="frame" x="71" y="355" width="222" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="79g-8h-TfY" id="Hga-vi-5fm"/>
+                                                </connections>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_21.png" id="ZzF-nW-Qd2">
+                                                <rect key="frame" x="20" y="400" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="svs-Ap-nEl">
+                                                <rect key="frame" x="63" y="400" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="确认密码" minimumFontSize="17" id="TrC-7F-GES">
+                                                <rect key="frame" x="71" y="405" width="222" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="79g-8h-TfY" id="AEZ-5R-NHm"/>
+                                                </connections>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_25.png" id="IIB-RW-udq">
+                                                <rect key="frame" x="20" y="100" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="Tr8-zx-mT4">
+                                                <rect key="frame" x="63" y="100" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_27.png" id="c58-3O-yh7">
+                                                <rect key="frame" x="20" y="150" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="QxP-65-D7t">
+                                                <rect key="frame" x="63" y="150" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="姓名" minimumFontSize="17" id="LBA-Dy-x2C">
+                                                <rect key="frame" x="71" y="155" width="222" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="79g-8h-TfY" id="eX9-gX-yGO"/>
+                                                </connections>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_26.png" id="1r5-hs-ro8">
+                                                <rect key="frame" x="20" y="200" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="Fty-7f-eQ8">
+                                                <rect key="frame" x="63" y="200" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zxh-Vh-ZaM">
+                                                <rect key="frame" x="20" y="450" width="280" height="38"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" backgroundImage="icon_24.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted" backgroundImage="icon_24_1.png"/>
+                                                <connections>
+                                                    <action selector="action_Next:" destination="79g-8h-TfY" eventType="touchUpInside" id="qKI-I4-702"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QLm-4A-EXE">
+                                                <rect key="frame" x="63" y="105" width="105" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="男">
+                                                    <color key="titleColor" red="0.52549022440000004" green="0.52156865600000002" blue="0.52549022440000004" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="action_TouchSex:" destination="79g-8h-TfY" eventType="touchUpInside" id="jGq-FX-mh1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xIi-wc-bt1">
+                                                <rect key="frame" x="188" y="105" width="105" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="女">
+                                                    <color key="titleColor" red="0.52549022440000004" green="0.52156865600000002" blue="0.52549022440000004" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="action_TouchSex:" destination="79g-8h-TfY" eventType="touchUpInside" id="pHO-bB-N9r"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Sv1-pJ-z08">
+                                                <rect key="frame" x="195" y="113" width="13" height="13"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="地区" minimumFontSize="17" id="Lbd-ij-7sl">
+                                                <rect key="frame" x="71" y="205" width="222" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_28.png" id="fNT-sr-Xy5">
+                                                <rect key="frame" x="278" y="212" width="15" height="15"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="tWK-Ce-eiV">
+                                                <rect key="frame" x="71" y="112" width="13" height="13"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </scrollView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="JGA-4z-1Av">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_23.png" id="UA2-W1-Uu2">
+                                                <rect key="frame" x="20" y="0.0" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="AWZ-i9-JRw">
+                                                <rect key="frame" x="63" y="0.0" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="您的手机号码" minimumFontSize="17" id="mtf-VU-jzv">
+                                                <rect key="frame" x="71" y="5" width="222" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="79g-8h-TfY" id="oCs-JB-X4W"/>
+                                                </connections>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_18.png" id="Dqq-HP-Hq2">
+                                                <rect key="frame" x="20" y="50" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="Feo-Df-Jn0">
+                                                <rect key="frame" x="63" y="50" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入注册账号" minimumFontSize="17" id="hAe-bs-HqX">
+                                                <rect key="frame" x="71" y="55" width="222" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="79g-8h-TfY" id="hW8-nB-KRB"/>
+                                                </connections>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_19.png" id="jJh-PV-Y82">
+                                                <rect key="frame" x="20" y="100" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="NhD-qb-Fum">
+                                                <rect key="frame" x="63" y="100" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="您的邮箱" minimumFontSize="17" id="un9-pd-kpc">
+                                                <rect key="frame" x="71" y="105" width="222" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="79g-8h-TfY" id="XwE-WM-IEl"/>
+                                                </connections>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_20.png" id="k8F-Wg-ZbW">
+                                                <rect key="frame" x="20" y="150" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="ENw-nV-ZGh">
+                                                <rect key="frame" x="63" y="150" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码设置" minimumFontSize="17" id="zVV-yB-gZI">
+                                                <rect key="frame" x="71" y="155" width="222" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="79g-8h-TfY" id="suk-r5-c0U"/>
+                                                </connections>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_21.png" id="1UD-Hh-sME">
+                                                <rect key="frame" x="20" y="200" width="43" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_22.png" id="KTy-f5-79d">
+                                                <rect key="frame" x="63" y="200" width="238" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="确认密码" minimumFontSize="17" id="WgB-yw-pB7">
+                                                <rect key="frame" x="71" y="205" width="222" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="79g-8h-TfY" id="fLr-Nt-g9H"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5w8-Fc-sVE">
+                                                <rect key="frame" x="20" y="260" width="280" height="38"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" backgroundImage="icon_24.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted" backgroundImage="icon_24_1.png"/>
+                                                <connections>
+                                                    <action selector="action_Next:" destination="79g-8h-TfY" eventType="touchUpInside" id="0JT-en-Qk2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="btn_Register1" destination="hDZ-c2-HZx" id="jzj-Gd-7mf"/>
+                        <outlet property="btn_Register2" destination="jsG-5D-gqR" id="NSG-98-BsW"/>
+                        <outlet property="imageView_Female" destination="Sv1-pJ-z08" id="Azc-n7-uhw"/>
+                        <outlet property="imageView_Male" destination="tWK-Ce-eiV" id="Tai-9J-EqP"/>
+                        <outlet property="scrollView_Main" destination="SYL-KD-lB1" id="TxK-Me-cXN"/>
+                        <outlet property="scrollView_Right" destination="4y6-BP-j49" id="sC1-Jp-5g0"/>
+                        <outlet property="scrollView_left" destination="JGA-4z-1Av" id="e6C-Bv-zbC"/>
+                        <outlet property="textField_Account1" destination="hAe-bs-HqX" id="pY9-g2-dxz"/>
+                        <outlet property="textField_Account2" destination="oE0-Xa-z6N" id="sfQ-jV-fOr"/>
+                        <outlet property="textField_Address" destination="Lbd-ij-7sl" id="Nf5-Yk-afA"/>
+                        <outlet property="textField_DetailAddress" destination="W6e-UE-4IC" id="rm9-LJ-GNl"/>
+                        <outlet property="textField_Email1" destination="un9-pd-kpc" id="pOf-y3-XQ0"/>
+                        <outlet property="textField_Email2" destination="zwh-Gq-7Ap" id="KBg-3b-Rgc"/>
+                        <outlet property="textField_Name" destination="LBA-Dy-x2C" id="gnq-xk-O8C"/>
+                        <outlet property="textField_Phone1" destination="mtf-VU-jzv" id="jfr-O4-hcb"/>
+                        <outlet property="textField_Phone2" destination="B6J-CI-gqk" id="s8P-TS-Dn9"/>
+                        <outlet property="textField_Pwd1" destination="zVV-yB-gZI" id="jum-l3-EXe"/>
+                        <outlet property="textField_Pwd2" destination="R9S-74-eur" id="Caz-Dn-OC3"/>
+                        <outlet property="textField_PwdAgain1" destination="WgB-yw-pB7" id="zE1-U0-Kxp"/>
+                        <outlet property="textField_PwdAgain2" destination="TrC-7F-GES" id="NNe-ZW-CxA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4pl-xi-gFM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1166" y="-1035"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="qTg-8X-M1B">
             <objects>
@@ -427,8 +944,32 @@
         <image name="icon5.9.png" width="100" height="100"/>
         <image name="icon6.9.png" width="100" height="100"/>
         <image name="icon_1.png" width="320" height="44"/>
+        <image name="icon_10.png" width="17" height="19"/>
+        <image name="icon_11.png" width="12" height="21"/>
+        <image name="icon_12.png" width="137" height="42"/>
+        <image name="icon_12_1.png" width="137" height="42"/>
+        <image name="icon_13.png" width="137" height="42"/>
+        <image name="icon_13_1.png" width="137" height="42"/>
+        <image name="icon_14.png" width="486" height="385"/>
+        <image name="icon_15.png" width="640" height="185"/>
+        <image name="icon_16.png" width="80" height="80"/>
+        <image name="icon_17.png" width="80" height="80"/>
+        <image name="icon_18.png" width="85" height="80"/>
+        <image name="icon_19.png" width="85" height="80"/>
+        <image name="icon_20.png" width="85" height="80"/>
+        <image name="icon_21.png" width="85" height="80"/>
+        <image name="icon_22.png" width="476" height="80"/>
+        <image name="icon_23.png" width="85" height="80"/>
+        <image name="icon_24.png" width="564" height="84"/>
+        <image name="icon_24_1.png" width="558" height="77"/>
+        <image name="icon_25.png" width="85" height="80"/>
+        <image name="icon_26.png" width="85" height="80"/>
+        <image name="icon_27.png" width="85" height="80"/>
+        <image name="icon_28.png" width="30" height="30"/>
+        <image name="icon_29.png" width="85" height="80"/>
         <image name="icon_4.png" width="55" height="16"/>
         <image name="icon_7.png" width="15" height="15"/>
+        <image name="icon_9.png" width="280" height="40"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

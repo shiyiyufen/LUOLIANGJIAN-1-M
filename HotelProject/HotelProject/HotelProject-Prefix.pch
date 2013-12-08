@@ -14,5 +14,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "StaticData.h"
+#import "BaseViewController.h"
 #import "PriceLabel.h"
+#import "DataHelper.h"
 #endif

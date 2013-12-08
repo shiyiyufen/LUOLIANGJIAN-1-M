@@ -8,6 +8,7 @@
 
 #import "Tool.h"
 #import "MBProgressHUD.h"
+#define USER_ID @"USER_ID"
 @implementation Tool
 static Tool *__tool = nil;
 static const int navBarViewTag = 100;
@@ -18,6 +19,19 @@ static const int navBarViewTag = 100;
 		__tool = [[Tool alloc] init];
 	}
 	return __tool;
+}
+
+- (NSString *)userID
+{
+    return [[NSUserDefaults standardUserDefaults] stringForKey:USER_ID];
+}
+
+- (void)saveUser:(NSString *)userID
+{
+    if (USER_ID.length == 0) return;
+    NSUserDefaults *stands = [NSUserDefaults standardUserDefaults];
+    [stands setObject:userID forKey:USER_ID];
+    [stands synchronize];
 }
 
 
@@ -127,14 +141,15 @@ static const int navBarViewTag = 100;
 	
 	//	CGSize btnSize = backBg.size;
 	
-	UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 27)];
+	UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 42, 37)];
 	[backBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
-	[backBtn setTitle:NSLocalizedString(@"txt-fh", nil) forState:UIControlStateNormal];
+//	[backBtn setTitle:NSLocalizedString(@"txt-fh", nil) forState:UIControlStateNormal];
 	[backBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	[backBtn setBackgroundImage:backBg forState:UIControlStateNormal];
-	[backBtn setBackgroundImage:backPressBg forState:UIControlStateHighlighted];
+	[backBtn setImage:backBg forState:UIControlStateNormal];
+	[backBtn setImage:backPressBg forState:UIControlStateHighlighted];
     //	if (SEVEN) [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 0)];
     //	else [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -13, 0, 0)];
+    [backBtn setImageEdgeInsets:UIEdgeInsetsMake(8, 5, 8, 12)];
 	[backBtn addTarget:target action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
 	
 	return [[UIBarButtonItem alloc] initWithCustomView:backBtn];

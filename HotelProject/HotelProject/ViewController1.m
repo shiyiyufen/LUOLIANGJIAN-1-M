@@ -7,7 +7,7 @@
 //
 
 #import "ViewController1.h"
-
+#import "LogViewController.h"
 
 @implementation HighLightBtn
 
@@ -185,6 +185,51 @@
 - (IBAction)touchItem:(UIButton *)sender
 {
      NSLog(@"tag:%d",[sender tag]);
+    int tag = [sender tag];
+    switch (tag)
+    {
+        case 0:
+        {
+            
+            break;
+        }
+        case 1:
+        {
+            
+            break;
+        }
+        case 2:
+        {
+            
+            break;
+        }
+        case 3:
+        {
+            
+            break;
+        }
+        case 4:
+        {
+            
+            break;
+        }
+        case 5://个人中心
+        {
+            if ([[Tool shared] userID])
+            {
+                //进入个人中心
+            }else
+            {
+                UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                LogViewController *controller = [main instantiateViewControllerWithIdentifier:@"LogViewController"];
+                [controller setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+                [self.navigationController pushViewControllerRetro:controller animated:YES];
+            }
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 
