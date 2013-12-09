@@ -118,6 +118,20 @@
 		A05D2950184EF639009F743F /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D2940184EF639009F743F /* UIImage+MultiFormat.m */; };
 		A05D2951184EF639009F743F /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D2942184EF639009F743F /* UIImage+WebP.m */; };
 		A05D2952184EF639009F743F /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D2944184EF639009F743F /* UIImageView+WebCache.m */; };
+		A0A323F918556E210033623B /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0A323F718556E210033623B /* TencentOpenApi_IOS_Bundle.bundle */; };
+		A0A323FA18556E210033623B /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A323F818556E210033623B /* TencentOpenAPI.framework */; };
+		A0A323FC18556EB50033623B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A323FB18556EB50033623B /* Security.framework */; };
+		A0A323FE18556EC10033623B /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A323FD18556EC10033623B /* libiconv.dylib */; };
+		A0A3240018556ECA0033623B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A323FF18556ECA0033623B /* SystemConfiguration.framework */; };
+		A0A3240218556EDB0033623B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A3240118556EDB0033623B /* libsqlite3.dylib */; };
+		A0A3240418556EE90033623B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A3240318556EE90033623B /* CoreTelephony.framework */; };
+		A0A3240618556EF50033623B /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A3240518556EF50033623B /* libstdc++.dylib */; };
+		A0A3240818556EFD0033623B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A3240718556EFD0033623B /* libz.dylib */; };
+		A0A3241F1855B0EE0033623B /* SinaWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0A324171855B0EE0033623B /* SinaWeibo.bundle */; };
+		A0A324201855B0EE0033623B /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A324191855B0EE0033623B /* SinaWeibo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A0A324211855B0EE0033623B /* SinaWeiboAuthorizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A3241B1855B0EE0033623B /* SinaWeiboAuthorizeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A0A324221855B0EE0033623B /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A3241E1855B0EE0033623B /* SinaWeiboRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A0A324261855B1250033623B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A324251855B1250033623B /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -284,6 +298,26 @@
 		A05D2942184EF639009F743F /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		A05D2943184EF639009F743F /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		A05D2944184EF639009F743F /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		A0A323F718556E210033623B /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		A0A323F818556E210033623B /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = HotelProject/TencentOpenAPI.framework; sourceTree = "<group>"; };
+		A0A323FB18556EB50033623B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A0A323FD18556EC10033623B /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		A0A323FF18556ECA0033623B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A0A3240118556EDB0033623B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		A0A3240318556EE90033623B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		A0A3240518556EF50033623B /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		A0A3240718556EFD0033623B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A0A3240E185592040033623B /* sdkDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sdkDef.h; sourceTree = "<group>"; };
+		A0A324171855B0EE0033623B /* SinaWeibo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SinaWeibo.bundle; sourceTree = "<group>"; };
+		A0A324181855B0EE0033623B /* SinaWeibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeibo.h; sourceTree = "<group>"; };
+		A0A324191855B0EE0033623B /* SinaWeibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeibo.m; sourceTree = "<group>"; };
+		A0A3241A1855B0EE0033623B /* SinaWeiboAuthorizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboAuthorizeView.h; sourceTree = "<group>"; };
+		A0A3241B1855B0EE0033623B /* SinaWeiboAuthorizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboAuthorizeView.m; sourceTree = "<group>"; };
+		A0A3241C1855B0EE0033623B /* SinaWeiboConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboConstants.h; sourceTree = "<group>"; };
+		A0A3241D1855B0EE0033623B /* SinaWeiboRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboRequest.h; sourceTree = "<group>"; };
+		A0A3241E1855B0EE0033623B /* SinaWeiboRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboRequest.m; sourceTree = "<group>"; };
+		A0A324241855B1250033623B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		A0A324251855B1250033623B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,7 +325,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A3240818556EFD0033623B /* libz.dylib in Frameworks */,
+				A0A3240618556EF50033623B /* libstdc++.dylib in Frameworks */,
+				A0A3240418556EE90033623B /* CoreTelephony.framework in Frameworks */,
+				A0A3240218556EDB0033623B /* libsqlite3.dylib in Frameworks */,
+				A0A3240018556ECA0033623B /* SystemConfiguration.framework in Frameworks */,
+				A0A323FE18556EC10033623B /* libiconv.dylib in Frameworks */,
+				A0A323FC18556EB50033623B /* Security.framework in Frameworks */,
 				2E189E70184E25C000FDDCBB /* CoreGraphics.framework in Frameworks */,
+				A0A323FA18556E210033623B /* TencentOpenAPI.framework in Frameworks */,
 				2E189E72184E25C000FDDCBB /* UIKit.framework in Frameworks */,
 				2E189E6E184E25C000FDDCBB /* Foundation.framework in Frameworks */,
 			);
@@ -332,6 +374,14 @@
 		2E189E6C184E25C000FDDCBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0A3240718556EFD0033623B /* libz.dylib */,
+				A0A3240518556EF50033623B /* libstdc++.dylib */,
+				A0A3240318556EE90033623B /* CoreTelephony.framework */,
+				A0A3240118556EDB0033623B /* libsqlite3.dylib */,
+				A0A323FF18556ECA0033623B /* SystemConfiguration.framework */,
+				A0A323FD18556EC10033623B /* libiconv.dylib */,
+				A0A323FB18556EB50033623B /* Security.framework */,
+				A0A323F818556E210033623B /* TencentOpenAPI.framework */,
 				2E189E6D184E25C000FDDCBB /* Foundation.framework */,
 				2E189E6F184E25C000FDDCBB /* CoreGraphics.framework */,
 				2E189E71184E25C000FDDCBB /* UIKit.framework */,
@@ -343,6 +393,7 @@
 		2E189E73184E25C000FDDCBB /* HotelProject */ = {
 			isa = PBXGroup;
 			children = (
+				A0A323F718556E210033623B /* TencentOpenApi_IOS_Bundle.bundle */,
 				2E189EB6184E30A100FDDCBB /* StaticData.h */,
 				2E189EC9184E367500FDDCBB /* Libs */,
 				2E189EB5184E302300FDDCBB /* Images */,
@@ -401,6 +452,9 @@
 		2E189EB4184E280200FDDCBB /* TOOL */ = {
 			isa = PBXGroup;
 			children = (
+				A0A324231855B1250033623B /* JSONKit */,
+				A0A324161855B0EE0033623B /* SinaWeibo */,
+				A0A3240B185591FA0033623B /* SDK */,
 				A05D2921184EEB80009F743F /* FBBannerView.h */,
 				A05D2922184EEB80009F743F /* FBBannerView.m */,
 				A05D2924184EEBA2009F743F /* FBPageControl.h */,
@@ -565,6 +619,38 @@
 			path = "SDWebImage 3.5";
 			sourceTree = "<group>";
 		};
+		A0A3240B185591FA0033623B /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				A0A3240E185592040033623B /* sdkDef.h */,
+			);
+			name = SDK;
+			sourceTree = "<group>";
+		};
+		A0A324161855B0EE0033623B /* SinaWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				A0A324171855B0EE0033623B /* SinaWeibo.bundle */,
+				A0A324181855B0EE0033623B /* SinaWeibo.h */,
+				A0A324191855B0EE0033623B /* SinaWeibo.m */,
+				A0A3241A1855B0EE0033623B /* SinaWeiboAuthorizeView.h */,
+				A0A3241B1855B0EE0033623B /* SinaWeiboAuthorizeView.m */,
+				A0A3241C1855B0EE0033623B /* SinaWeiboConstants.h */,
+				A0A3241D1855B0EE0033623B /* SinaWeiboRequest.h */,
+				A0A3241E1855B0EE0033623B /* SinaWeiboRequest.m */,
+			);
+			path = SinaWeibo;
+			sourceTree = "<group>";
+		};
+		A0A324231855B1250033623B /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				A0A324241855B1250033623B /* JSONKit.h */,
+				A0A324251855B1250033623B /* JSONKit.m */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -659,6 +745,7 @@
 				2E9533B51850DCCC0058A887 /* icon_8.png in Resources */,
 				2EA105A01852CAD300419024 /* icon_16.png in Resources */,
 				2EA105851852C49900419024 /* icon_11@2x.png in Resources */,
+				A0A323F918556E210033623B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				2E3CBAEB1853301200ED7545 /* icon_20.png in Resources */,
 				2EA105891852C4C200419024 /* icon_11.png in Resources */,
 				2E3CBAF11853320300ED7545 /* icon_24_1.png in Resources */,
@@ -685,6 +772,7 @@
 				2E189EC1184E349200FDDCBB /* icon_1@2x.png in Resources */,
 				2E3CBAFE18536C4B00ED7545 /* icon_30.png in Resources */,
 				2E3CBAEC1853301200ED7545 /* icon_21.png in Resources */,
+				A0A3241F1855B0EE0033623B /* SinaWeibo.bundle in Resources */,
 				2E3CBAFD18536C4B00ED7545 /* icon_30_1.png in Resources */,
 				2E189ECF184E368A00FDDCBB /* success@2x.png in Resources */,
 				A000A38F18502FA500E30646 /* icon3.9.png in Resources */,
@@ -742,12 +830,15 @@
 				2EA1057A1852B50E00419024 /* LogViewController.m in Sources */,
 				A05D2923184EEB80009F743F /* FBBannerView.m in Sources */,
 				2EA1057D1852B51A00419024 /* RegisterViewController.m in Sources */,
+				A0A324211855B0EE0033623B /* SinaWeiboAuthorizeView.m in Sources */,
+				A0A324221855B0EE0033623B /* SinaWeiboRequest.m in Sources */,
 				2E189E7A184E25C000FDDCBB /* main.m in Sources */,
 				A05D2945184EF639009F743F /* MKAnnotationView+WebCache.m in Sources */,
 				2E189EB3184E27FB00FDDCBB /* ViewController5.m in Sources */,
 				2E3CBB0E18537F6100ED7545 /* LH_ConnectPool.m in Sources */,
 				A05D294F184EF639009F743F /* UIImage+GIF.m in Sources */,
 				A05D294E184EF639009F743F /* UIButton+WebCache.m in Sources */,
+				A0A324261855B1250033623B /* JSONKit.m in Sources */,
 				2E189ED0184E368A00FDDCBB /* MBProgressHUD.m in Sources */,
 				A05D2952184EF639009F743F /* UIImageView+WebCache.m in Sources */,
 				A05D294D184EF639009F743F /* SDWebImagePrefetcher.m in Sources */,
@@ -755,6 +846,7 @@
 				2E3CBB0F18537F6100ED7545 /* LH_Node.m in Sources */,
 				2E9747D5184F9EEC007E2335 /* PriceLabel.m in Sources */,
 				A05D2947184EF639009F743F /* SDImageCache.m in Sources */,
+				A0A324201855B0EE0033623B /* SinaWeibo.m in Sources */,
 				A05D2948184EF639009F743F /* SDWebImageCompat.m in Sources */,
 				2E189EAA184E27DD00FDDCBB /* ViewController2.m in Sources */,
 				2E189EAD184E27E700FDDCBB /* ViewController3.m in Sources */,
@@ -888,10 +980,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/quyoumac2/Desktop/Personal\\ App/Wai_Bao/LUOLIANGJIAN/HotelProject/HotelProject",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HotelProject/HotelProject-Prefix.pch";
 				INFOPLIST_FILE = "HotelProject/HotelProject-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/quyoumac2/Desktop/Personal\\ App/Wai_Bao/LUOLIANGJIAN/HotelProject/HotelProject/libWeiboSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -902,10 +1003,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/quyoumac2/Desktop/Personal\\ App/Wai_Bao/LUOLIANGJIAN/HotelProject/HotelProject",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HotelProject/HotelProject-Prefix.pch";
 				INFOPLIST_FILE = "HotelProject/HotelProject-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/quyoumac2/Desktop/Personal\\ App/Wai_Bao/LUOLIANGJIAN/HotelProject/HotelProject/libWeiboSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

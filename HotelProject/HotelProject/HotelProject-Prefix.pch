@@ -17,4 +17,47 @@
 #import "BaseViewController.h"
 #import "PriceLabel.h"
 #import "DataHelper.h"
+#import <TencentOpenAPI/TencentOAuth.h>
+#import "SinaWeibo.h"
+//#import "sdkCall.h"
 #endif
+
+#define __TencentApiSdk_For_TencentApp_ 0
+
+#define __Project_ARC__ 1
+
+#ifndef __has_feature
+#define __has_feature(x) 0 //Compatibility with non-clang compilers.
+#endif  // __has_feature
+
+//导入宏定义
+//#import "ConfigMacros.h"
+
+#if __has_feature(objc_arc)
+#define __AUTORELEASE(x)   (x)
+#define __RELEASE(x)       (x) = nil;
+#define __RETAIN(x)        (x)
+#define __SUPER_DEALLOC    ;
+#else
+#define __RETAIN(x)      [(x) retain];
+#define __AUTORELEASE(x) [(x) autorelease];
+
+#define __RELEASE(x) \
+if(nil != (x)) \
+{\
+[(x) release];\
+(x) = nil;\
+}
+#define __SUPER_DEALLOC    [super dealloc];
+#endif
+
+#define __TencentDemoAppid_  @"222222"
+
+#define PreDefM_APPID @"222222"
+
+/** 100573040*
+/** b3f6f46ac0daf6902c46dbf4fd35920c*/
+
+#define kAppKey             @"589890824"
+#define kAppSecret          @"1fb8e8fad1a47c42a9e1b4e2acd9b527"
+ #define kRedirectURI    @"http://www.sina.com"

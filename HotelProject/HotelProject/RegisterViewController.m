@@ -9,8 +9,14 @@
 #import "RegisterViewController.h"
 #import "AddressPicker.h"
 @interface RegisterViewController ()<AddressPickerDelegate>
+{
+	UITextField *lastField;
+}
+
 @property (nonatomic,strong) NSString *sexString;
 @property (nonatomic,strong) NSString *areaID;
+
+
 @end
 
 @implementation RegisterViewController
@@ -47,6 +53,7 @@
     AddressPicker *pickerView = [[AddressPicker alloc] initAddressPicker];
     pickerView.delegate = self;
     self.textField_Address.inputView = pickerView;
+	self.textField_Address.delegate = self;
     self.textField_DetailAddress.delegate = self;
     self.textField_Email1.delegate = self;
     self.textField_Email2.delegate = self;
@@ -74,6 +81,8 @@
         [self.scrollView_Main setContentOffset:CGPointMake(0, 0) animated:YES];
         self.btn_Register1.selected = YES;
         self.btn_Register2.selected = NO;
+		if (lastField) [lastField resignFirstResponder];
+		self.scrollView_Right.contentSize = CGSizeMake(0, 500);
     }
 }
 
@@ -85,7 +94,8 @@
         [self.scrollView_Main setContentOffset:CGPointMake(self.scrollView_Main.bounds.size.width, 0) animated:YES];
         self.btn_Register2.selected = YES;
         self.btn_Register1.selected = NO;
-        
+        if (lastField) [lastField resignFirstResponder];
+		self.scrollView_left.contentSize = CGSizeMake(0, 300);
     }
 }
 
@@ -216,9 +226,29 @@
 }
 
 #pragma mark - TextField
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+	lastField = textField;
+	if ([self.btn_Register2 isSelected])
+	{
+		self.scrollView_Right.contentSize = CGSizeMake(0, 660);
+	}else
+	{
+		self.scrollView_left.contentSize = CGSizeMake(0, 500);
+	}
+	return YES;
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+	if ([self.btn_Register2 isSelected])
+	{
+		self.scrollView_Right.contentSize = CGSizeMake(0, 500);
+	}else
+	{
+		self.scrollView_left.contentSize = CGSizeMake(0, 300);
+	}
     return YES;
 }
 

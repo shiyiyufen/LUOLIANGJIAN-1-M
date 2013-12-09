@@ -71,6 +71,8 @@ static const int navBarViewTag = 100;
 			textField.layer.cornerRadius = 12.5f;
 			textField.returnKeyType = UIReturnKeyDone;
 			textField.delegate = target;
+			textField.font = [UIFont systemFontOfSize:12];
+			textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 			[textField setCenter:CGPointMake(navigationBar.bounds.size.width/2 + 10, navigationBar.bounds.size.height/2)];
 			[textField setTag:navBarViewTag];
 			[navigationBar addSubview:textField];

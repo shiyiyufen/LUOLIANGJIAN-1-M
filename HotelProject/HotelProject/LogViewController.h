@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *textField_Name;
 @property (weak, nonatomic) IBOutlet UITextField *textField_Pwd;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView_Main;
+@property (weak, nonatomic) IBOutlet UIView *view_Bottom;
+
 
 - (IBAction)action_Register:(id)sender;
 - (IBAction)action_Log:(id)sender;

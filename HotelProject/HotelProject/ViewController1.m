@@ -91,7 +91,8 @@
 	[self configureProductScroll];
 	[self configureHotelOrder];
 	[self configureMall];
-	self.scrollView_Main.contentSize = CGSizeMake(0, 1140);
+	if (IS_IPHONE5) self.scrollView_Main.contentSize = CGSizeMake(0, 1050);
+	else self.scrollView_Main.contentSize = CGSizeMake(0, 1140);
 	// Do any additional setup after loading the view.
 }
 
