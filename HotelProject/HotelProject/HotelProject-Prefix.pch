@@ -17,7 +17,8 @@
 #import "BaseViewController.h"
 #import "PriceLabel.h"
 #import "DataHelper.h"
-#import <TencentOpenAPI/TencentOAuth.h>
+
+#import "TencentOpenAPI.framework/Headers/TencentOAuth.h"
 #import "SinaWeibo.h"
 //#import "sdkCall.h"
 #endif

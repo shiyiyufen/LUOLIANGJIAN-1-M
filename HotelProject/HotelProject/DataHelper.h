@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface DataHelper : NSObject
+
 /**
  * 快速注册接口
  * @param
@@ -54,4 +55,66 @@
  * @return result :1 表示存在 ；2表示 不存在
  */
 + (void)getCheckAccountWithAccount:(NSString *)account completion:(void(^)(NSDictionary *resultInfo))handler;
+
+/**
+ * 查询酒店
+ * @param 县编号areaid
+ * @param 关键字keywords
+ * @return
+ */
++ (void)getResultsWithSearchKey:(NSString *)key areaID:(NSString *)areaID completion:(void(^)(NSArray *datas))handler;
+
+/**
+ * 酒店信息
+ * @param 酒店编号 hotelnumber
+ * @return 
+ data[0][‘hotel’]
+ 酒店基本信息data[0][‘room’]和
+ 所有图片data[0][‘piclist’]
+ 
+ */
++ (void)getHotelInfoWithHotelNumber:(NSString *)hotel completion:(void(^)(NSDictionary *resultInfo))handler;
+
+/**
+ * 酒店预订页面
+ * @param 入住时间 		checkintime
+ * @param 离店时间 		leavetime,
+ * @param 入住人数		bookpsrnum,
+ * @param 预订房间数		bookroomnum,
+ * @param 预订人姓名		bookpsrname,
+ * @param 预订人电话		bookpsrtel,
+ * @param 最晚到达时间    lastarrivetime,
+ * @param 预订房间费用    totalprice,
+ * @param 预订的床型编号， bookbednumber,
+ * @param 预订的酒店名称   hotelname,
+ * @param 预订的酒店编号   hotelnumber,
+ * @param 预订人账号      psraccount，
+ * @param 发布酒店的账号   htraccount
+ * @return data[0][‘info’]==1成功2失败
+
+ */
++ (void)getOrderResultWithStartDate:(NSString *)startdate endDate:(NSString *)enddate peopleCount:(NSString *)pCount roomCount:(NSString *)rCount name:(NSString *)name phone:(NSString *)phone overDate:(NSString *)oDate money:(NSString *)money bedNumber:(NSString *)bedNumber hotelName:(NSString *)hotel hotelID:(NSString *)hID account:(NSString *)acccount hAccount:(NSString *)hAccount completion:(void(^)(NSDictionary *resultInfo))handler;
+
+/**
+ * 查询酒店订单详情
+ * @param 酒店订单编号hotelindentnumber
+ * @return data[0][‘info’]
+ */
++ (void)getOrderDetailWithOrderID:(NSString *)orderID completion:(void(^)(NSDictionary *resultInfo))handler;
+
+/**
+ * 我的所有酒店订单
+ * @param 预订人账号psraccount
+ * @return data[0][‘info’]
+ 
+ */
++ (void)getAllMyOrdersListWithAccount:(NSString *)account completion:(void(^)(NSArray *datas))handler;
+
+/**
+ * 我的所有收藏
+ * @param 收藏人账号psraccount
+ * @return data[0][‘info’]
+ 
+ */
++ (void)getAllMySavedListWithAccount:(NSString *)account completion:(void(^)(NSArray *datas))handler;
 @end

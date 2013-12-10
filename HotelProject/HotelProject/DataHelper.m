@@ -8,12 +8,14 @@
 
 #import "DataHelper.h"
 #import "LH_ConnectPool.h"
+
+
 @implementation DataHelper
 
 + (void)getResiterWithPhone:(NSString *)phone account:(NSString *)account email:(NSString *)email pwd:(NSString *)pwd completion:(void(^)(NSDictionary *resultInfo))handler
 {
     NSString *url = [NSString stringWithFormat:@"%@personRigister!addPersonInfo.do",BASE_URL];
-    NSDictionary *info = @{@"personmobilenumber": phone,@"personaccount": account,@"personemail": email,@"personpwd": pwd};
+    NSDictionary *info = @{@"person_tel": phone,@"person_account": account,@"person_email": email,@"person_pwd": pwd};
     [[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url parmsDic:info handlerDic:^(NSDictionary *dictionary, NSString *message, int error) {
         if (error == LH_RequesterrorNone)
         {
@@ -25,7 +27,7 @@
 + (void)getResiterWithPhone:(NSString *)phone account:(NSString *)account sex:(NSString *)sex name:(NSString *)name area:(NSString *)areaID address:(NSString *)address email:(NSString *)email pwd:(NSString *)pwd completion:(void(^)(NSDictionary *resultInfo))handler
 {
     NSString *url = [NSString stringWithFormat:@"%@personRigister!addPersonInfo.do",BASE_URL];
-    NSDictionary *info = @{@"personmobilenumber": phone,@"personaccount": account,@"personemail": email,@"personpwd": pwd,@"personsex":sex,@"personname" : name,@"areasid" : areaID,@"personaddressdetail" : address};
+    NSDictionary *info = @{@"person_tel": phone,@"person_account": account,@"person_email": email,@"person_pwd": pwd,@"person_sex":sex,@"person_name" : name,@"person_adress" : areaID,@"person_adressdetail" : address};
     [[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url parmsDic:info handlerDic:^(NSDictionary *dictionary, NSString *message, int error) {
         if (error == LH_RequesterrorNone)
         {
@@ -82,6 +84,36 @@
             handler(dictionary);
         }else handler(nil);
     }];
+}
+
++ (void)getResultsWithSearchKey:(NSString *)key areaID:(NSString *)areaID completion:(void(^)(NSArray *datas))handler
+{
+    
+}
+
++ (void)getHotelInfoWithHotelNumber:(NSString *)hotel completion:(void(^)(NSDictionary *resultInfo))handler
+{
+    
+}
+
++ (void)getOrderResultWithStartDate:(NSString *)startdate endDate:(NSString *)enddate peopleCount:(NSString *)pCount roomCount:(NSString *)rCount name:(NSString *)name phone:(NSString *)phone overDate:(NSString *)oDate money:(NSString *)money bedNumber:(NSString *)bedNumber hotelName:(NSString *)hotel hotelID:(NSString *)hID account:(NSString *)acccount hAccount:(NSString *)hAccount completion:(void(^)(NSDictionary *resultInfo))handler
+{
+    
+}
+
++ (void)getOrderDetailWithOrderID:(NSString *)orderID completion:(void(^)(NSDictionary *resultInfo))handler
+{
+    
+}
+
++ (void)getAllMyOrdersListWithAccount:(NSString *)account completion:(void(^)(NSArray *datas))handler
+{
+    
+}
+
++ (void)getAllMySavedListWithAccount:(NSString *)account completion:(void(^)(NSArray *datas))handler
+{
+    
 }
 
 @end

@@ -70,6 +70,7 @@
 		2E9747D1184F9CBB007E2335 /* icon_7_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9747CF184F9CBB007E2335 /* icon_7_1@2x.png */; };
 		2E9747D2184F9CBB007E2335 /* icon_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9747D0184F9CBB007E2335 /* icon_7@2x.png */; };
 		2E9747D5184F9EEC007E2335 /* PriceLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9747D4184F9EEC007E2335 /* PriceLabel.m */; };
+		2EA057E818576BD200DEA79D /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA057E718576BD200DEA79D /* TencentOpenAPI.framework */; };
 		2EA1057A1852B50E00419024 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA105791852B50E00419024 /* LogViewController.m */; };
 		2EA1057D1852B51A00419024 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA1057C1852B51A00419024 /* RegisterViewController.m */; };
 		2EA1057F1852C45900419024 /* icon_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EA1057E1852C45900419024 /* icon_9@2x.png */; };
@@ -119,7 +120,6 @@
 		A05D2951184EF639009F743F /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D2942184EF639009F743F /* UIImage+WebP.m */; };
 		A05D2952184EF639009F743F /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D2944184EF639009F743F /* UIImageView+WebCache.m */; };
 		A0A323F918556E210033623B /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0A323F718556E210033623B /* TencentOpenApi_IOS_Bundle.bundle */; };
-		A0A323FA18556E210033623B /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A323F818556E210033623B /* TencentOpenAPI.framework */; };
 		A0A323FC18556EB50033623B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A323FB18556EB50033623B /* Security.framework */; };
 		A0A323FE18556EC10033623B /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A323FD18556EC10033623B /* libiconv.dylib */; };
 		A0A3240018556ECA0033623B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A323FF18556ECA0033623B /* SystemConfiguration.framework */; };
@@ -231,6 +231,7 @@
 		2E9747D0184F9CBB007E2335 /* icon_7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_7@2x.png"; sourceTree = "<group>"; };
 		2E9747D3184F9EEC007E2335 /* PriceLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceLabel.h; sourceTree = "<group>"; };
 		2E9747D4184F9EEC007E2335 /* PriceLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceLabel.m; sourceTree = "<group>"; };
+		2EA057E718576BD200DEA79D /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = HotelProject/TencentOpenAPI.framework; sourceTree = "<group>"; };
 		2EA105781852B50E00419024 /* LogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
 		2EA105791852B50E00419024 /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
 		2EA1057B1852B51A00419024 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -299,7 +300,6 @@
 		A05D2943184EF639009F743F /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		A05D2944184EF639009F743F /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		A0A323F718556E210033623B /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
-		A0A323F818556E210033623B /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = HotelProject/TencentOpenAPI.framework; sourceTree = "<group>"; };
 		A0A323FB18556EB50033623B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A0A323FD18556EC10033623B /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		A0A323FF18556ECA0033623B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -333,7 +333,7 @@
 				A0A323FE18556EC10033623B /* libiconv.dylib in Frameworks */,
 				A0A323FC18556EB50033623B /* Security.framework in Frameworks */,
 				2E189E70184E25C000FDDCBB /* CoreGraphics.framework in Frameworks */,
-				A0A323FA18556E210033623B /* TencentOpenAPI.framework in Frameworks */,
+				2EA057E818576BD200DEA79D /* TencentOpenAPI.framework in Frameworks */,
 				2E189E72184E25C000FDDCBB /* UIKit.framework in Frameworks */,
 				2E189E6E184E25C000FDDCBB /* Foundation.framework in Frameworks */,
 			);
@@ -374,6 +374,7 @@
 		2E189E6C184E25C000FDDCBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EA057E718576BD200DEA79D /* TencentOpenAPI.framework */,
 				A0A3240718556EFD0033623B /* libz.dylib */,
 				A0A3240518556EF50033623B /* libstdc++.dylib */,
 				A0A3240318556EE90033623B /* CoreTelephony.framework */,
@@ -381,7 +382,6 @@
 				A0A323FF18556ECA0033623B /* SystemConfiguration.framework */,
 				A0A323FD18556EC10033623B /* libiconv.dylib */,
 				A0A323FB18556EB50033623B /* Security.framework */,
-				A0A323F818556E210033623B /* TencentOpenAPI.framework */,
 				2E189E6D184E25C000FDDCBB /* Foundation.framework */,
 				2E189E6F184E25C000FDDCBB /* CoreGraphics.framework */,
 				2E189E71184E25C000FDDCBB /* UIKit.framework */,
@@ -983,16 +983,13 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/quyoumac2/Desktop/Personal\\ App/Wai_Bao/LUOLIANGJIAN/HotelProject/HotelProject",
+					"/Users/ZhaoJuan/Documents/WAI_BAO/LUOLIANGJIAN-1-M/HotelProject/HotelProject",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HotelProject/HotelProject-Prefix.pch";
 				INFOPLIST_FILE = "HotelProject/HotelProject-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/quyoumac2/Desktop/Personal\\ App/Wai_Bao/LUOLIANGJIAN/HotelProject/HotelProject/libWeiboSDK",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1006,16 +1003,13 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/quyoumac2/Desktop/Personal\\ App/Wai_Bao/LUOLIANGJIAN/HotelProject/HotelProject",
+					"/Users/ZhaoJuan/Documents/WAI_BAO/LUOLIANGJIAN-1-M/HotelProject/HotelProject",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HotelProject/HotelProject-Prefix.pch";
 				INFOPLIST_FILE = "HotelProject/HotelProject-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/quyoumac2/Desktop/Personal\\ App/Wai_Bao/LUOLIANGJIAN/HotelProject/HotelProject/libWeiboSDK",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
