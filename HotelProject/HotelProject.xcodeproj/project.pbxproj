@@ -70,7 +70,6 @@
 		2E9747D1184F9CBB007E2335 /* icon_7_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9747CF184F9CBB007E2335 /* icon_7_1@2x.png */; };
 		2E9747D2184F9CBB007E2335 /* icon_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9747D0184F9CBB007E2335 /* icon_7@2x.png */; };
 		2E9747D5184F9EEC007E2335 /* PriceLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9747D4184F9EEC007E2335 /* PriceLabel.m */; };
-		2EA057E818576BD200DEA79D /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA057E718576BD200DEA79D /* TencentOpenAPI.framework */; };
 		2EA1057A1852B50E00419024 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA105791852B50E00419024 /* LogViewController.m */; };
 		2EA1057D1852B51A00419024 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA1057C1852B51A00419024 /* RegisterViewController.m */; };
 		2EA1057F1852C45900419024 /* icon_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EA1057E1852C45900419024 /* icon_9@2x.png */; };
@@ -119,6 +118,12 @@
 		A05D2950184EF639009F743F /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D2940184EF639009F743F /* UIImage+MultiFormat.m */; };
 		A05D2951184EF639009F743F /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D2942184EF639009F743F /* UIImage+WebP.m */; };
 		A05D2952184EF639009F743F /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D2944184EF639009F743F /* UIImageView+WebCache.m */; };
+		A097B63F1859812200F580F9 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A097B63E1859812200F580F9 /* TencentOpenAPI.framework */; };
+		A097B6421859A5D300F580F9 /* MessageCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A097B6411859A5D300F580F9 /* MessageCheckViewController.m */; };
+		A097B6441859A73D00F580F9 /* icon_31.png in Resources */ = {isa = PBXBuildFile; fileRef = A097B6431859A73D00F580F9 /* icon_31.png */; };
+		A097B6481859A7C100F580F9 /* icon_32.1.png in Resources */ = {isa = PBXBuildFile; fileRef = A097B6451859A7C100F580F9 /* icon_32.1.png */; };
+		A097B6491859A7C100F580F9 /* icon_32.png in Resources */ = {isa = PBXBuildFile; fileRef = A097B6461859A7C100F580F9 /* icon_32.png */; };
+		A097B64A1859A7C100F580F9 /* icon_33.png in Resources */ = {isa = PBXBuildFile; fileRef = A097B6471859A7C100F580F9 /* icon_33.png */; };
 		A0A323F918556E210033623B /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0A323F718556E210033623B /* TencentOpenApi_IOS_Bundle.bundle */; };
 		A0A323FC18556EB50033623B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A323FB18556EB50033623B /* Security.framework */; };
 		A0A323FE18556EC10033623B /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A323FD18556EC10033623B /* libiconv.dylib */; };
@@ -231,7 +236,6 @@
 		2E9747D0184F9CBB007E2335 /* icon_7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_7@2x.png"; sourceTree = "<group>"; };
 		2E9747D3184F9EEC007E2335 /* PriceLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceLabel.h; sourceTree = "<group>"; };
 		2E9747D4184F9EEC007E2335 /* PriceLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceLabel.m; sourceTree = "<group>"; };
-		2EA057E718576BD200DEA79D /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = HotelProject/TencentOpenAPI.framework; sourceTree = "<group>"; };
 		2EA105781852B50E00419024 /* LogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
 		2EA105791852B50E00419024 /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
 		2EA1057B1852B51A00419024 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -299,6 +303,13 @@
 		A05D2942184EF639009F743F /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		A05D2943184EF639009F743F /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		A05D2944184EF639009F743F /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		A097B63E1859812200F580F9 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = HotelProject/TencentOpenAPI.framework; sourceTree = "<group>"; };
+		A097B6401859A5D300F580F9 /* MessageCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCheckViewController.h; sourceTree = "<group>"; };
+		A097B6411859A5D300F580F9 /* MessageCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCheckViewController.m; sourceTree = "<group>"; };
+		A097B6431859A73D00F580F9 /* icon_31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_31.png; sourceTree = "<group>"; };
+		A097B6451859A7C100F580F9 /* icon_32.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_32.1.png; sourceTree = "<group>"; };
+		A097B6461859A7C100F580F9 /* icon_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_32.png; sourceTree = "<group>"; };
+		A097B6471859A7C100F580F9 /* icon_33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_33.png; sourceTree = "<group>"; };
 		A0A323F718556E210033623B /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		A0A323FB18556EB50033623B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A0A323FD18556EC10033623B /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
@@ -333,7 +344,7 @@
 				A0A323FE18556EC10033623B /* libiconv.dylib in Frameworks */,
 				A0A323FC18556EB50033623B /* Security.framework in Frameworks */,
 				2E189E70184E25C000FDDCBB /* CoreGraphics.framework in Frameworks */,
-				2EA057E818576BD200DEA79D /* TencentOpenAPI.framework in Frameworks */,
+				A097B63F1859812200F580F9 /* TencentOpenAPI.framework in Frameworks */,
 				2E189E72184E25C000FDDCBB /* UIKit.framework in Frameworks */,
 				2E189E6E184E25C000FDDCBB /* Foundation.framework in Frameworks */,
 			);
@@ -374,7 +385,7 @@
 		2E189E6C184E25C000FDDCBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2EA057E718576BD200DEA79D /* TencentOpenAPI.framework */,
+				A097B63E1859812200F580F9 /* TencentOpenAPI.framework */,
 				A0A3240718556EFD0033623B /* libz.dylib */,
 				A0A3240518556EF50033623B /* libstdc++.dylib */,
 				A0A3240318556EE90033623B /* CoreTelephony.framework */,
@@ -478,6 +489,10 @@
 		2E189EB5184E302300FDDCBB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A097B6451859A7C100F580F9 /* icon_32.1.png */,
+				A097B6461859A7C100F580F9 /* icon_32.png */,
+				A097B6471859A7C100F580F9 /* icon_33.png */,
+				A097B6431859A73D00F580F9 /* icon_31.png */,
 				2E3CBAFB18536C4B00ED7545 /* icon_30_1.png */,
 				2E95700D1853F5C30061FC58 /* icon_29.png */,
 				2E3CBAFC18536C4B00ED7545 /* icon_30.png */,
@@ -579,6 +594,8 @@
 				2EA105791852B50E00419024 /* LogViewController.m */,
 				2EA1057B1852B51A00419024 /* RegisterViewController.h */,
 				2EA1057C1852B51A00419024 /* RegisterViewController.m */,
+				A097B6401859A5D300F580F9 /* MessageCheckViewController.h */,
+				A097B6411859A5D300F580F9 /* MessageCheckViewController.m */,
 			);
 			name = Log;
 			sourceTree = "<group>";
@@ -734,6 +751,7 @@
 				2E3CBAF21853320300ED7545 /* icon_24.png in Resources */,
 				2E3CBAEA1853301200ED7545 /* icon_19.png in Resources */,
 				2EA1059B1852C7BA00419024 /* icon_14.png in Resources */,
+				A097B6491859A7C100F580F9 /* icon_32.png in Resources */,
 				2EA1058E1852C61F00419024 /* icon_12@2x.png in Resources */,
 				2E9747D1184F9CBB007E2335 /* icon_7_1@2x.png in Resources */,
 				2E189EC8184E361B00FDDCBB /* icon_back_1.png in Resources */,
@@ -761,7 +779,9 @@
 				2EA105961852C6D300419024 /* icon_12_1.png in Resources */,
 				2E9533B31850DC9D0058A887 /* icon_8@2x.png in Resources */,
 				2E3CBAF6185360DF00ED7545 /* icon_25.png in Resources */,
+				A097B6441859A73D00F580F9 /* icon_31.png in Resources */,
 				A05D2918184EE639009F743F /* icon_2.png in Resources */,
+				A097B6481859A7C100F580F9 /* icon_32.1.png in Resources */,
 				A05D291B184EE717009F743F /* icon_3_1@2x.png in Resources */,
 				2E189E78184E25C000FDDCBB /* InfoPlist.strings in Resources */,
 				2EA1059D1852CA0600419024 /* icon_15.png in Resources */,
@@ -772,6 +792,7 @@
 				2E189EC1184E349200FDDCBB /* icon_1@2x.png in Resources */,
 				2E3CBAFE18536C4B00ED7545 /* icon_30.png in Resources */,
 				2E3CBAEC1853301200ED7545 /* icon_21.png in Resources */,
+				A097B64A1859A7C100F580F9 /* icon_33.png in Resources */,
 				A0A3241F1855B0EE0033623B /* SinaWeibo.bundle in Resources */,
 				2E3CBAFD18536C4B00ED7545 /* icon_30_1.png in Resources */,
 				2E189ECF184E368A00FDDCBB /* success@2x.png in Resources */,
@@ -846,6 +867,7 @@
 				2E3CBB0F18537F6100ED7545 /* LH_Node.m in Sources */,
 				2E9747D5184F9EEC007E2335 /* PriceLabel.m in Sources */,
 				A05D2947184EF639009F743F /* SDImageCache.m in Sources */,
+				A097B6421859A5D300F580F9 /* MessageCheckViewController.m in Sources */,
 				A0A324201855B0EE0033623B /* SinaWeibo.m in Sources */,
 				A05D2948184EF639009F743F /* SDWebImageCompat.m in Sources */,
 				2E189EAA184E27DD00FDDCBB /* ViewController2.m in Sources */,
@@ -983,7 +1005,7 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ZhaoJuan/Documents/WAI_BAO/LUOLIANGJIAN-1-M/HotelProject/HotelProject",
+					"/Users/quyoumac2/Desktop/Personal\\ App/Wai_Bao/LUOLIANGJIAN/HotelProject/HotelProject",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HotelProject/HotelProject-Prefix.pch";
@@ -1003,7 +1025,7 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ZhaoJuan/Documents/WAI_BAO/LUOLIANGJIAN-1-M/HotelProject/HotelProject",
+					"/Users/quyoumac2/Desktop/Personal\\ App/Wai_Bao/LUOLIANGJIAN/HotelProject/HotelProject",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HotelProject/HotelProject-Prefix.pch";

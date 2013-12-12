@@ -19,6 +19,9 @@ typedef enum BarViewType
 - (NSString *)userID;
 - (void)saveUser:(NSString *)userID;
 
+- (void)saveProvinces:(NSDictionary *)provinces;
+- (NSArray *)provinces;
+
 - (void)createBackgroundViewForBar:(UINavigationBar *)navigationBar type:(BarType)type target:(id)target;
 
 - (void)hideTip;

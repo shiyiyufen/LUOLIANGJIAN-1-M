@@ -504,7 +504,7 @@
     {
         if ([parms isKindOfClass:[NSDictionary class]])
         {
-            //数据流
+			//数据流
             NSMutableData *data = [NSMutableData data];//要发送的xml数据
             NSString *send = [[self setXMLWithParms:parms] retain];
             [data appendData:[send dataUsingEncoding:NSUTF8StringEncoding]];//utf-8编码
@@ -529,19 +529,25 @@
 {
     if (nil == parms) return nil;
     NSMutableString *string = [[NSMutableString alloc] init];
-    [string appendString:@"<from>"];
+#ifdef JSON_PARMS
+	NSData *data = [NSJSONSerialization dataWithJSONObject:parms options:NSJSONWritingPrettyPrinted error:nil];
+	string = (NSMutableString *)[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+#else
+	[string appendString:@"<from>"];
     NSUInteger count = [parms count];
 	if (count > 0)//有参数->组装参数
 	{
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-		for (id key in parms) 
+		for (id key in parms)
 		{
 			[string appendFormat:@"<%@>%@</%@>",key,[parms objectForKey:key],key];
 		}
         [pool release];
 	}
     [string appendString:@"</from>"];
+#endif
     NSLog(@"组装的xml字符串:%@",string);
+
     return [string autorelease];
 }
 

@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "AddressPicker.h"
+#import "MessageCheckViewController.h"
 @interface RegisterViewController ()<AddressPickerDelegate>
 {
 	UITextField *lastField;
@@ -136,33 +137,53 @@
             [[Tool shared] showTip:@"请输入您的注册账号"];
             return;
         }
-        NSString *email = self.textField_Email1.text;
-        if (0 == email.length)
-        {
-            [[Tool shared] showTip:@"请输入您的邮箱"];
-            return;
-        }
-        NSString *pwd = self.textField_Pwd1.text;
-        if (0 == pwd.length)
-        {
-            [[Tool shared] showTip:@"请输入您的密码"];
-            return;
-        }
-        NSString *pwd2 = self.textField_PwdAgain1.text;
-        if (0 == pwd2.length)
-        {
-            [[Tool shared] showTip:@"请再次输入您的密码"];
-            return;
-        }
-        if (![pwd isEqualToString:pwd2])
-        {
-            [[Tool shared] showTip:@"两次输入的密码不一致"];
-            return;
-        }
-        [DataHelper getResiterWithPhone:phone account:account email:email pwd:pwd completion:^(NSDictionary *resultInfo)
-        {
-             NSLog(@"resultInfo:%@",resultInfo);
-        }];
+		[[Tool shared] showWaiting];
+		[DataHelper getCheckAccountWithAccount:account completion:^(NSDictionary *resultInfo)
+		{
+			if (resultInfo)
+			{
+				if ([[resultInfo objectForKey:@"result"] intValue] == 2)//已经注册
+				{
+					[[Tool shared] showTip:@"该账号已经被注册"];
+				}else
+				{
+					NSString *email = self.textField_Email1.text;
+					if (0 == email.length)
+					{
+						[[Tool shared] showTip:@"请输入您的邮箱"];
+						return;
+					}
+					NSString *pwd = self.textField_Pwd1.text;
+					if (0 == pwd.length)
+					{
+						[[Tool shared] showTip:@"请输入您的密码"];
+						return;
+					}
+					NSString *pwd2 = self.textField_PwdAgain1.text;
+					if (0 == pwd2.length)
+					{
+						[[Tool shared] showTip:@"请再次输入您的密码"];
+						return;
+					}
+					if (![pwd isEqualToString:pwd2])
+					{
+						[[Tool shared] showTip:@"两次输入的密码不一致"];
+						return;
+					}
+					
+					UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+					MessageCheckViewController *controller = [main instantiateViewControllerWithIdentifier:@"MessageCheckViewController"];
+					controller.phone = phone;
+					controller.sex = self.sexString;
+					controller.pwd = pwd;
+					controller.email = email;
+					[controller setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+					[self.navigationController pushViewControllerRetro:controller animated:YES];
+				}
+			}
+			[[Tool shared] hideTip];
+		}];
+        
     }else
     {
         NSString *phone = self.textField_Phone2.text;
@@ -177,51 +198,74 @@
             [[Tool shared] showTip:@"请输入您的注册账号"];
             return;
         }
-        NSString *name = self.textField_Name.text;
-        if (0 == name.length)
-        {
-            [[Tool shared] showTip:@"请输入您的姓名"];
-            return;
-        }
-        if (self.areaID == nil)
-        {
-            [[Tool shared] showTip:@"请选择地区"];
-            return;
-        }
-        NSString *address = self.textField_Address.text;
-        if (0 == address.length)
-        {
-            [[Tool shared] showTip:@"请输入您的地址"];
-            return;
-        }
-        NSString *email = self.textField_Email2.text;
-        if (0 == email.length)
-        {
-            [[Tool shared] showTip:@"请输入您的邮箱"];
-            return;
-        }
-        NSString *pwd = self.textField_Pwd2.text;
-        if (0 == pwd.length)
-        {
-            [[Tool shared] showTip:@"请输入您的密码"];
-            return;
-        }
-        NSString *pwd2 = self.textField_PwdAgain2.text;
-        if (0 == pwd2.length)
-        {
-            [[Tool shared] showTip:@"请再次输入您的密码"];
-            return;
-        }
-        if (![pwd isEqualToString:pwd2])
-        {
-            [[Tool shared] showTip:@"两次输入的密码不一致"];
-            return;
-        }
+		[[Tool shared] showWaiting];
+		[DataHelper getCheckAccountWithAccount:account completion:^(NSDictionary *resultInfo)
+		 {
+			 
+			 if (resultInfo)
+			 {
+				 if ([[resultInfo objectForKey:@"result"] intValue] == 1)//已经注册
+				 {
+					 [[Tool shared] showTip:@"注册账号已经被注册"];
+				 }else
+				 {
+					 NSString *name = self.textField_Name.text;
+					 if (0 == name.length)
+					 {
+						 [[Tool shared] showTip:@"请输入您的姓名"];
+						 return;
+					 }
+					 if (self.areaID == nil)
+					 {
+						 [[Tool shared] showTip:@"请选择地区"];
+						 return;
+					 }
+					 NSString *address = self.textField_Address.text;
+					 if (0 == address.length)
+					 {
+						 [[Tool shared] showTip:@"请输入您的地址"];
+						 return;
+					 }
+					 NSString *email = self.textField_Email2.text;
+					 if (0 == email.length)
+					 {
+						 [[Tool shared] showTip:@"请输入您的邮箱"];
+						 return;
+					 }
+					 NSString *pwd = self.textField_Pwd2.text;
+					 if (0 == pwd.length)
+					 {
+						 [[Tool shared] showTip:@"请输入您的密码"];
+						 return;
+					 }
+					 NSString *pwd2 = self.textField_PwdAgain2.text;
+					 if (0 == pwd2.length)
+					 {
+						 [[Tool shared] showTip:@"请再次输入您的密码"];
+						 return;
+					 }
+					 if (![pwd isEqualToString:pwd2])
+					 {
+						 [[Tool shared] showTip:@"两次输入的密码不一致"];
+						 return;
+					 }
+					 
+					 UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+					 MessageCheckViewController *controller = [main instantiateViewControllerWithIdentifier:@"MessageCheckViewController"];
+					 controller.phone = phone;
+					 controller.name = name;
+					 controller.sex = self.sexString;
+					 controller.address = address;
+					 controller.areaID = self.areaID;
+					 controller.pwd = pwd;
+					 controller.email = email;
+					 [controller setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+					 [self.navigationController pushViewControllerRetro:controller animated:YES];
+				 }
+			 }
+			 [[Tool shared] hideTip];
+		 }];
         
-        [DataHelper getResiterWithPhone:phone account:account sex:self.sexString name:name area:self.areaID address:address email:email pwd:pwd completion:^(NSDictionary *resultInfo)
-        {
-            NSLog(@"resultInfo:%@",resultInfo);
-        }];
     }
 }
 

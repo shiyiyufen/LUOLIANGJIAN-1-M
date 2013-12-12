@@ -34,6 +34,18 @@ static const int navBarViewTag = 100;
     [stands synchronize];
 }
 
+- (void)saveProvinces:(NSDictionary *)provinces
+{
+	NSString *path = [DOCUMENTPATH stringByAppendingPathComponent:@"address.plist"];
+	[provinces writeToFile:path atomically:YES];
+}
+
+- (NSArray *)provinces
+{
+	NSString *path = [DOCUMENTPATH stringByAppendingPathComponent:@"address.plist"];
+	NSArray *array = [[NSArray alloc] initWithContentsOfFile:path];
+	return array;
+}
 
 - (void)createBackgroundViewForBar:(UINavigationBar *)navigationBar type:(BarType)type target:(id)target
 {
