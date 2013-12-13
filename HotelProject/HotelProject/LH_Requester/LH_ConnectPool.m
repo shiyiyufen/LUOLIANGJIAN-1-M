@@ -31,7 +31,7 @@ static LH_ConnectPool *pools = nil;
         //最大并发数
         self.maxConcurrentOperationCount = MaxCount;
         concurrentEnabled = NO;
-        requestMethodGet = NO;
+        requestMethodGet = YES;
     }
     return self;
 }

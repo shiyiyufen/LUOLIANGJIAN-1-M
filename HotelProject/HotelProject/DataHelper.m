@@ -35,41 +35,60 @@
         }else handler(nil);
     }];
 }
-
+//820000
 + (void)getProvincesWithCompletion:(void(^)(NSArray *provinces))handler
 {
     NSString *url = [NSString stringWithFormat:@"%@findAddress!getProvinces.do",BASE_URL];
-	[[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url handlerArray:^(NSArray *objects, NSString *message, int error)
+	[[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url handlerDic:^(NSDictionary *objects, NSString *message, int error)
      {
          if (error == LH_RequesterrorNone)
          {
-             handler(objects);
+			 if (objects && [objects isKindOfClass:[NSDictionary class]])
+			 {
+				 NSArray *items = [objects objectForKey:@"pro"];
+				 if ([items isKindOfClass:[NSArray class]])
+				 {
+					 handler(items);
+				 }else handler(nil);
+			 }else handler(nil);
          }else handler(nil);
      }];
 }
 
 + (void)getCitiesWithProvince:(NSString *)provinceID completion:(void(^)(NSArray *cities))handler
 {
-    NSString *url = [NSString stringWithFormat:@"%@findAddress!getCitys.do",BASE_URL];
-    NSDictionary *info = @{@"provinceid": provinceID};
-	[[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url parmsDic:info handlerArray:^(NSArray *dataArray, NSString *message, int error)
+    NSString *url = [NSString stringWithFormat:@"%@findAddress!getCitys.do?provinceid=%@",BASE_URL,provinceID];
+	[[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url handlerDic:^(NSDictionary *dataArray, NSString *message, int error)
      {
          if (error == LH_RequesterrorNone)
          {
-             handler(dataArray);
+			 if (dataArray && [dataArray isKindOfClass:[NSDictionary class]])
+			 {
+				 NSArray *items = [dataArray objectForKey:@"city"];
+				 if ([items isKindOfClass:[NSArray class]])
+				 {
+					 handler(items);
+				 }else handler(nil);
+			 }else handler(nil);
          }else handler(nil);
      }];
 }
 
 + (void)getAreasWithCityID:(NSString *)cityID completion:(void(^)(NSArray *datas))handler
 {
-    NSString *url = [NSString stringWithFormat:@"%@findAddress!getAreas.do",BASE_URL];
-    NSDictionary *info = @{@"cityid": cityID};
-	[[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url parmsDic:info handlerArray:^(NSArray *dataArray, NSString *message, int error)
+    NSString *url = [NSString stringWithFormat:@"%@findAddress!getAreas.do?cityid=%@",BASE_URL,cityID];
+	[[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url handlerDic:^(NSDictionary *dataArray, NSString *message, int error)
      {
          if (error == LH_RequesterrorNone)
          {
-             handler(dataArray);
+			 if (dataArray && [dataArray isKindOfClass:[NSDictionary class]])
+			 {
+				 NSArray *items = [dataArray objectForKey:@"area"];
+				 if ([items isKindOfClass:[NSArray class]])
+				 {
+					 handler(items);
+				 }else handler(nil);
+			 }else handler(nil);
          }else handler(nil);
      }];
 }

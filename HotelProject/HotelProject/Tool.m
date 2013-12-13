@@ -34,17 +34,77 @@ static const int navBarViewTag = 100;
     [stands synchronize];
 }
 
-- (void)saveProvinces:(NSDictionary *)provinces
+- (void)saveProvinces:(NSArray *)provinces
 {
+	NSMutableDictionary *items = [NSMutableDictionary dictionary];
+	for (NSDictionary *dic in provinces)
+	{
+		NSDictionary *item = [NSDictionary dictionaryWithObjectsAndKeys:dic[@"provincename"],@"provincename", nil];
+		[items setObject:item forKey:dic[@"provinceid"]];
+	}
+	
 	NSString *path = [DOCUMENTPATH stringByAppendingPathComponent:@"address.plist"];
-	[provinces writeToFile:path atomically:YES];
+	[items writeToFile:path atomically:YES];
 }
 
-- (NSArray *)provinces
+- (NSDictionary *)provinces
 {
 	NSString *path = [DOCUMENTPATH stringByAppendingPathComponent:@"address.plist"];
-	NSArray *array = [[NSArray alloc] initWithContentsOfFile:path];
+	NSDictionary *array = [NSDictionary dictionaryWithContentsOfFile:path];
 	return array;
+}
+
+- (void)saveCity:(NSArray *)cities forProvince:(NSString *)provinceId
+{
+	NSMutableDictionary *provinces = [NSMutableDictionary dictionaryWithDictionary:[self provinces]];
+	if (!provinces) return;
+	if (!provinceId) return;
+	if (!cities || cities.count == 0) return;
+	NSMutableDictionary *province = [NSMutableDictionary dictionaryWithDictionary:[provinces objectForKey:provinceId]];
+	
+	if (![province objectForKey:@"items"])
+	{
+		NSMutableDictionary *items = [NSMutableDictionary dictionary];
+		for (NSDictionary *dic in cities)
+		{
+			NSDictionary *item = [NSDictionary dictionaryWithObjectsAndKeys:dic[@"cityname"],@"cityname", nil];
+			[items setObject:item forKey:dic[@"cityid"]];
+		}
+		[province setObject:items forKey:@"items"];
+		[provinces setObject:province forKey:provinceId];
+		
+		NSString *path = [DOCUMENTPATH stringByAppendingPathComponent:@"address.plist"];
+		[provinces writeToFile:path atomically:YES];
+	}
+}
+
+- (void)saveArea:(NSArray *)areas forCity:(NSString *)cityId province:(NSString *)provinceId
+{
+	NSMutableDictionary *provinces = [NSMutableDictionary dictionaryWithDictionary:[self provinces]];
+	if (!provinces) return;
+	if (!cityId) return;
+	if (!areas || areas.count == 0) return;
+	NSMutableDictionary *province = [NSMutableDictionary dictionaryWithDictionary:[provinces objectForKey:provinceId]];
+	if ([province objectForKey:@"items"])
+	{
+		NSMutableDictionary *cities = [province objectForKey:@"items"];
+		NSMutableDictionary *city = [NSMutableDictionary dictionaryWithDictionary:[cities objectForKey:cityId]];
+		if (![city objectForKey:@"items"])
+		{
+			NSMutableDictionary *items = [NSMutableDictionary dictionary];
+			for (NSDictionary *dic in areas)
+			{
+				NSDictionary *item = [NSDictionary dictionaryWithObjectsAndKeys:dic[@"areasname"],@"areasname", nil];
+				[items setObject:item forKey:dic[@"areasid"]];
+			}
+			[city setObject:items forKey:@"items"];
+			[cities setObject:city forKey:cityId];
+			[province setObject:cities forKey:@"items"];
+			[provinces setObject:province forKey:provinceId];
+			NSString *path = [DOCUMENTPATH stringByAppendingPathComponent:@"address.plist"];
+			[provinces writeToFile:path atomically:YES];
+		}
+	}
 }
 
 - (void)createBackgroundViewForBar:(UINavigationBar *)navigationBar type:(BarType)type target:(id)target

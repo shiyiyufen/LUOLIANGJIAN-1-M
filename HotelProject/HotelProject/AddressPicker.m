@@ -9,7 +9,7 @@
 #import "AddressPicker.h"
 @interface AddressPicker()<UIPickerViewDelegate,UIPickerViewDataSource>
 @property (nonatomic,strong) NSMutableDictionary *datas;
-@property (nonatomic,strong) NSArray *provinces;
+@property (nonatomic,strong) NSDictionary *provinces,*cities,*areas;
 
 @property (nonatomic,strong) UIBarButtonItem *titleItem;
 @property (nonatomic,strong) NSString *province,*city,*address;
@@ -45,14 +45,15 @@
         
         
         self.datas = [[NSMutableDictionary alloc] init];
+		self.provinces = [[Tool shared] provinces];
     }
     return self;
 }
 
-- (void)configureProvinces:(NSArray *)provinces
-{
-    self.provinces = provinces;
-}
+//- (void)configureProvinces:(NSArray *)provinces
+//{
+//    self.provinces = provinces;
+//}
 
 - (void)setAddressLabel:(NSString *)address
 {
@@ -80,6 +81,35 @@
 #pragma mark - UIPickerView
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
+	switch (component)
+    {
+        case 0:
+        {
+            NSArray *keys = [self.provinces allKeys];
+			return [[self.provinces objectForKey:keys[row]] objectForKey:@"provincename"];
+            break;
+        }
+        case 1:
+        {
+            NSString *key = [[self.provinces allKeys] objectAtIndex:[pickerView selectedRowInComponent:0]];
+			NSDictionary *cities = [[self.provinces objectForKey:key] objectForKey:@"items"];
+			self.cities = cities;
+			NSArray *keys = [cities allKeys];
+			return [[cities objectForKey:keys[row]] objectForKey:@"cityname"];
+            break;
+        }
+        case 2:
+        {
+            NSString *key = [[self.cities allKeys] objectAtIndex:[pickerView selectedRowInComponent:1]];
+			NSDictionary *areas = [[self.cities objectForKey:key] objectForKey:@"items"];
+			self.areas = areas;
+			NSArray *keys = [areas allKeys];
+			return [[areas objectForKey:keys[row]] objectForKey:@"areasname"];
+            break;
+        }
+        default:
+            break;
+    }
     return @"1122";
 }
 
@@ -111,6 +141,56 @@
         default:
             break;
     }
+	switch (component)
+	{
+		case 0:
+			return [[self provinces] count];
+			break;
+		case 1:
+		{
+			NSString *key = [[self.provinces allKeys] objectAtIndex:[pickerView selectedRowInComponent:0]];
+			NSDictionary *cities = [[self.provinces objectForKey:key] objectForKey:@"items"];
+			if (cities.count)
+			{
+				self.cities = cities;
+				return cities.count;
+			}
+			[DataHelper getCitiesWithProvince:key completion:^(NSArray *cities)
+			{
+				if (cities)
+				{
+					[[Tool shared] saveCity:cities forProvince:key];
+					self.provinces = [[Tool shared] provinces];
+					if (pickerView) [pickerView reloadComponent:1];
+				}
+			}];
+			break;
+		}
+		case 2:
+		{
+			NSString *key = [[self.cities allKeys] objectAtIndex:[pickerView selectedRowInComponent:1]];
+			NSDictionary *areas = [[self.cities objectForKey:key] objectForKey:@"items"];
+			if (areas.count)
+			{
+				self.areas = areas;
+				return areas.count;
+			}
+			[DataHelper getAreasWithCityID:key completion:^(NSArray *datas) {
+				if (datas)
+				{
+					NSString *provinceKey = [[self.provinces allKeys] objectAtIndex:[pickerView selectedRowInComponent:0]];
+					[[Tool shared] saveArea:datas forCity:key province:provinceKey];
+					self.provinces = [[Tool shared] provinces];
+					NSDictionary *cities = [[self.provinces objectForKey:provinceKey] objectForKey:@"items"];
+					self.cities = cities;
+					if (pickerView) [pickerView reloadComponent:2];
+				}
+			}];
+			break;
+		}
+		default:
+			break;
+	}
     return 5;
 }
 
@@ -121,12 +201,47 @@
         case 0:
         {
             self.province = [NSString stringWithFormat:@"四川省%d",row];
+			NSString *key = [[self.provinces allKeys] objectAtIndex:[pickerView selectedRowInComponent:0]];
+			NSDictionary *cities = [[self.provinces objectForKey:key] objectForKey:@"items"];
+			if (cities.count)
+			{
+				if (pickerView) [pickerView reloadComponent:1];
+				return;
+			}
+			[DataHelper getCitiesWithProvince:key completion:^(NSArray *cities)
+			 {
+				 if (cities)
+				 {
+					 [[Tool shared] saveCity:cities forProvince:key];
+					 self.provinces = [[Tool shared] provinces];
+					 if (pickerView) [pickerView reloadComponent:1];
+				 }
+			 }];
+
             break;
         }
         case 1:
         {
             self.city = [NSString stringWithFormat:@"南充市%d",row];
-            break;
+			NSString *key = [[self.cities allKeys] objectAtIndex:[pickerView selectedRowInComponent:1]];
+			NSDictionary *areas = [[self.provinces objectForKey:key] objectForKey:@"items"];
+			if (areas.count)
+			{
+				if (pickerView) [pickerView reloadComponent:2];
+				return;
+			}
+			[DataHelper getAreasWithCityID:key completion:^(NSArray *datas) {
+				if (datas)
+				{
+					NSString *provinceKey = [[self.provinces allKeys] objectAtIndex:[pickerView selectedRowInComponent:0]];
+					[[Tool shared] saveArea:datas forCity:key province:provinceKey];
+					self.provinces = [[Tool shared] provinces];
+					NSDictionary *cities = [[self.provinces objectForKey:key] objectForKey:@"items"];
+					self.cities = cities;
+					if (pickerView) [pickerView reloadComponent:2];
+				}
+			}];
+			break;
         }
         case 2:
         {

@@ -16,7 +16,7 @@
 
 
 - (id)initAddressPicker;
-- (void)configureProvinces:(NSArray *)provinces;
+//- (void)configureProvinces:(NSArray *)provinces;
 @end
 
 @protocol AddressPickerDelegate<NSObject>
