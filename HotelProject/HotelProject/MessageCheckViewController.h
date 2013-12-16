@@ -26,4 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn_ReGet;
 
 - (IBAction)action_Register:(id)sender;
+- (IBAction)action_SendMsg:(id)sender;
+
+
+
 @end

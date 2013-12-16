@@ -140,6 +140,7 @@
 		[[Tool shared] showWaiting];
 		[DataHelper getCheckAccountWithAccount:account completion:^(NSDictionary *resultInfo)
 		{
+			
 			if (resultInfo)
 			{
 				if ([[resultInfo objectForKey:@"result"] intValue] == 2)//已经注册
@@ -170,7 +171,7 @@
 						[[Tool shared] showTip:@"两次输入的密码不一致"];
 						return;
 					}
-					
+					[[Tool shared] hideTip];
 					UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 					MessageCheckViewController *controller = [main instantiateViewControllerWithIdentifier:@"MessageCheckViewController"];
 					controller.phone = phone;
@@ -180,8 +181,7 @@
 					[controller setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
 					[self.navigationController pushViewControllerRetro:controller animated:YES];
 				}
-			}
-			[[Tool shared] hideTip];
+			}else [[Tool shared] hideTip];
 		}];
         
     }else
@@ -201,7 +201,7 @@
 		[[Tool shared] showWaiting];
 		[DataHelper getCheckAccountWithAccount:account completion:^(NSDictionary *resultInfo)
 		 {
-			 
+			 [[Tool shared] hideTip];
 			 if (resultInfo)
 			 {
 				 if ([[resultInfo objectForKey:@"result"] intValue] == 1)//已经注册
@@ -263,7 +263,7 @@
 					 [self.navigationController pushViewControllerRetro:controller animated:YES];
 				 }
 			 }
-			 [[Tool shared] hideTip];
+			 
 		 }];
         
     }
