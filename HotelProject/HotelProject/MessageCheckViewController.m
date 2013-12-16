@@ -8,14 +8,15 @@
 
 #import "MessageCheckViewController.h"
 @import MessageUI;
-@interface MessageCheckViewController ()
+@interface MessageCheckViewController ()<UITextFieldDelegate>
 @property (nonatomic,assign) BOOL checked,enabled,lastKeyString;
 
 @property (nonatomic,strong) NSTimer *timer;
 @end
 
 @implementation MessageCheckViewController
-static int leftTime = 60;
+//static int leftTime = 60;
+static int leftTime = 5;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -77,12 +78,13 @@ static int leftTime = 60;
 
 - (void)updateTime
 {
+    leftTime --;
 	[self.btn_ReGet setTitle:[NSString stringWithFormat:@"%d 秒后重新获取",leftTime] forState:UIControlStateNormal];
-	leftTime --;
 	if (leftTime == 0)
-	{
-		[self stopTimer];
-	}
+    {
+        [self.btn_ReGet setTitle:[NSString stringWithFormat:@"重新获取验证码"] forState:UIControlStateNormal];
+        [self stopTimer];
+    }
 }
 
 - (IBAction)action_Register:(id)sender
@@ -97,6 +99,7 @@ static int leftTime = 60;
 	
 	if (!self.checked) return;
 	[[Tool shared] showWaiting];
+    [self.textField_Msg resignFirstResponder];
 	if (0 == self.type)
 	{
 		[DataHelper getResiterWithPhone:self.phone account:self.account email:self.email pwd:self.pwd completion:^(NSDictionary *resultInfo)
@@ -155,5 +158,13 @@ static int leftTime = 60;
 		
         [[[[controller viewControllers] lastObject] navigationItem] setTitle:@"测试短信"];//修改短信界面标题
     }
+}
+
+
+#pragma mark - TextField
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 @end

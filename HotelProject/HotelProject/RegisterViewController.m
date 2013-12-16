@@ -143,7 +143,7 @@
 			
 			if (resultInfo)
 			{
-				if ([[resultInfo objectForKey:@"result"] intValue] == 2)//已经注册
+				if ([[resultInfo objectForKey:@"result"] intValue] == 1)//已经注册
 				{
 					[[Tool shared] showTip:@"该账号已经被注册"];
 				}else

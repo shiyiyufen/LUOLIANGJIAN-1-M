@@ -14,9 +14,8 @@
 
 + (void)getResiterWithPhone:(NSString *)phone account:(NSString *)account email:(NSString *)email pwd:(NSString *)pwd completion:(void(^)(NSDictionary *resultInfo))handler
 {
-    NSString *url = [NSString stringWithFormat:@"%@personRigister!addPersonInfo.do",BASE_URL];
-    NSDictionary *info = @{@"person_tel": phone,@"person_account": account,@"person_email": email,@"person_pwd": pwd};
-    [[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url parmsDic:info handlerDic:^(NSDictionary *dictionary, NSString *message, int error) {
+    NSString *url = [NSString stringWithFormat:@"%@personRigister!addPersonInfo.do?person_tel=%@&person_account=%@&person_email=%@&person_pwd=%@",BASE_URL,phone,account,email,pwd];
+    [[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url handlerDic:^(NSDictionary *dictionary, NSString *message, int error) {
         if (error == LH_RequesterrorNone)
         {
             handler(dictionary);
@@ -26,9 +25,8 @@
 
 + (void)getResiterWithPhone:(NSString *)phone account:(NSString *)account sex:(NSString *)sex name:(NSString *)name area:(NSString *)areaID address:(NSString *)address email:(NSString *)email pwd:(NSString *)pwd completion:(void(^)(NSDictionary *resultInfo))handler
 {
-    NSString *url = [NSString stringWithFormat:@"%@personRigister!addPersonInfo.do",BASE_URL];
-    NSDictionary *info = @{@"person_tel": phone,@"person_account": account,@"person_email": email,@"person_pwd": pwd,@"person_sex":sex,@"person_name" : name,@"person_adress" : areaID,@"person_adressdetail" : address};
-    [[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url parmsDic:info handlerDic:^(NSDictionary *dictionary, NSString *message, int error) {
+    NSString *url = [NSString stringWithFormat:@"%@personRigister!addPersonInfo.do?person_tel=%@&person_account=%@&person_email=%@&person_pwd=%@&person_sex=%@&person_name=%@&person_adress=%@&person_adressdetail=%@",BASE_URL,phone,account,email,pwd,sex,name,areaID,address];
+    [[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url handlerDic:^(NSDictionary *dictionary, NSString *message, int error) {
         if (error == LH_RequesterrorNone)
         {
             handler(dictionary);
