@@ -90,6 +90,7 @@
 		2EA1059D1852CA0600419024 /* icon_15.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EA1059C1852CA0600419024 /* icon_15.png */; };
 		2EA105A01852CAD300419024 /* icon_16.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EA1059E1852CAD300419024 /* icon_16.png */; };
 		2EA105A11852CAD300419024 /* icon_17.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EA1059F1852CAD300419024 /* icon_17.png */; };
+		2EB9EAA8185C24FF0088DBA7 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB9EAA7185C24FF0088DBA7 /* TencentOpenAPI.framework */; };
 		A000A38D18502FA500E30646 /* icon1.9.png in Resources */ = {isa = PBXBuildFile; fileRef = A000A38718502FA500E30646 /* icon1.9.png */; };
 		A000A38E18502FA500E30646 /* icon2.9.png in Resources */ = {isa = PBXBuildFile; fileRef = A000A38818502FA500E30646 /* icon2.9.png */; };
 		A000A38F18502FA500E30646 /* icon3.9.png in Resources */ = {isa = PBXBuildFile; fileRef = A000A38918502FA500E30646 /* icon3.9.png */; };
@@ -118,7 +119,6 @@
 		A05D2950184EF639009F743F /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D2940184EF639009F743F /* UIImage+MultiFormat.m */; };
 		A05D2951184EF639009F743F /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D2942184EF639009F743F /* UIImage+WebP.m */; };
 		A05D2952184EF639009F743F /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D2944184EF639009F743F /* UIImageView+WebCache.m */; };
-		A097B63F1859812200F580F9 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A097B63E1859812200F580F9 /* TencentOpenAPI.framework */; };
 		A097B6421859A5D300F580F9 /* MessageCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A097B6411859A5D300F580F9 /* MessageCheckViewController.m */; };
 		A097B6441859A73D00F580F9 /* icon_31.png in Resources */ = {isa = PBXBuildFile; fileRef = A097B6431859A73D00F580F9 /* icon_31.png */; };
 		A097B6481859A7C100F580F9 /* icon_32.1.png in Resources */ = {isa = PBXBuildFile; fileRef = A097B6451859A7C100F580F9 /* icon_32.1.png */; };
@@ -258,6 +258,7 @@
 		2EA1059C1852CA0600419024 /* icon_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_15.png; sourceTree = "<group>"; };
 		2EA1059E1852CAD300419024 /* icon_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16.png; sourceTree = "<group>"; };
 		2EA1059F1852CAD300419024 /* icon_17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_17.png; sourceTree = "<group>"; };
+		2EB9EAA7185C24FF0088DBA7 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = HotelProject/TencentOpenAPI.framework; sourceTree = "<group>"; };
 		A000A38718502FA500E30646 /* icon1.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.9.png; sourceTree = "<group>"; };
 		A000A38818502FA500E30646 /* icon2.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.9.png; sourceTree = "<group>"; };
 		A000A38918502FA500E30646 /* icon3.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.9.png; sourceTree = "<group>"; };
@@ -303,7 +304,6 @@
 		A05D2942184EF639009F743F /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		A05D2943184EF639009F743F /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		A05D2944184EF639009F743F /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
-		A097B63E1859812200F580F9 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = HotelProject/TencentOpenAPI.framework; sourceTree = "<group>"; };
 		A097B6401859A5D300F580F9 /* MessageCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCheckViewController.h; sourceTree = "<group>"; };
 		A097B6411859A5D300F580F9 /* MessageCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCheckViewController.m; sourceTree = "<group>"; };
 		A097B6431859A73D00F580F9 /* icon_31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_31.png; sourceTree = "<group>"; };
@@ -344,7 +344,7 @@
 				A0A323FE18556EC10033623B /* libiconv.dylib in Frameworks */,
 				A0A323FC18556EB50033623B /* Security.framework in Frameworks */,
 				2E189E70184E25C000FDDCBB /* CoreGraphics.framework in Frameworks */,
-				A097B63F1859812200F580F9 /* TencentOpenAPI.framework in Frameworks */,
+				2EB9EAA8185C24FF0088DBA7 /* TencentOpenAPI.framework in Frameworks */,
 				2E189E72184E25C000FDDCBB /* UIKit.framework in Frameworks */,
 				2E189E6E184E25C000FDDCBB /* Foundation.framework in Frameworks */,
 			);
@@ -385,7 +385,7 @@
 		2E189E6C184E25C000FDDCBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A097B63E1859812200F580F9 /* TencentOpenAPI.framework */,
+				2EB9EAA7185C24FF0088DBA7 /* TencentOpenAPI.framework */,
 				A0A3240718556EFD0033623B /* libz.dylib */,
 				A0A3240518556EF50033623B /* libstdc++.dylib */,
 				A0A3240318556EE90033623B /* CoreTelephony.framework */,
@@ -1006,6 +1006,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/quyoumac2/Desktop/Personal\\ App/Wai_Bao/LUOLIANGJIAN/HotelProject/HotelProject",
+					"/Users/ZhaoJuan/Documents/WAI_BAO/LUOLIANGJIAN-1-M/HotelProject/HotelProject",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HotelProject/HotelProject-Prefix.pch";
@@ -1026,6 +1027,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/quyoumac2/Desktop/Personal\\ App/Wai_Bao/LUOLIANGJIAN/HotelProject/HotelProject",
+					"/Users/ZhaoJuan/Documents/WAI_BAO/LUOLIANGJIAN-1-M/HotelProject/HotelProject",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HotelProject/HotelProject-Prefix.pch";
