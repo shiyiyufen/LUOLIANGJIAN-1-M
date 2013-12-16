@@ -95,9 +95,9 @@
 
 + (void)getCheckAccountWithAccount:(NSString *)account completion:(void(^)(NSDictionary *resultInfo))handler
 {
-    NSString *url = [NSString stringWithFormat:@"%@checkAccount!personAccountExist.do",BASE_URL];
-    NSDictionary *info = @{@"personaccount": account};
-    [[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url parmsDic:info  handlerDic:^(NSDictionary *dictionary, NSString *message, int error) {
+    NSString *url = [NSString stringWithFormat:@"%@checkAccount!personAccountExist.do?personaccount=%@",BASE_URL,account];
+//    NSDictionary *info = @{@"personaccount": account};
+    [[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url  handlerDic:^(NSDictionary *dictionary, NSString *message, int error) {
         if (error == LH_RequesterrorNone)
         {
             handler(dictionary);
