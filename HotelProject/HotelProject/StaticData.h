@@ -20,12 +20,14 @@ CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].siz
 #define DOCUMENTPATH		[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
 #define JSON_PARMS	
-
 #define BASE_URL			@"http://218.76.78.234:8081/lhwmobile/"
 #define IMAGE_INDEX			@"IMAGE_INDEX"
 #define USER_ID				@"householdId"
 #define IMAGE_URL			@"imageUrl"
 #define MAIN_STORYBOARD      [UIStoryboard storyboardWithName:@"Main" bundle:nil]
+
+#define MSG_NAME			@"8005385559"
+#define MSG_PWD				@"h36a0xfb"
 
 #define SPACE_MID           10
 

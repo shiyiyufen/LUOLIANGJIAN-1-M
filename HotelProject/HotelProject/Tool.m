@@ -59,7 +59,7 @@ static const int navBarViewTag = 100;
 	NSMutableDictionary *provinces = [NSMutableDictionary dictionaryWithDictionary:[self provinces]];
 	if (!provinces) return;
 	if (!provinceId) return;
-	if (!cities || cities.count == 0) return;
+	if (!cities) return;
 	NSMutableDictionary *province = [NSMutableDictionary dictionaryWithDictionary:[provinces objectForKey:provinceId]];
 	
 	if (![province objectForKey:@"items"])
@@ -70,6 +70,7 @@ static const int navBarViewTag = 100;
 			NSDictionary *item = [NSDictionary dictionaryWithObjectsAndKeys:dic[@"cityname"],@"cityname", nil];
 			[items setObject:item forKey:dic[@"cityid"]];
 		}
+		
 		[province setObject:items forKey:@"items"];
 		[provinces setObject:province forKey:provinceId];
 		
@@ -83,7 +84,7 @@ static const int navBarViewTag = 100;
 	NSMutableDictionary *provinces = [NSMutableDictionary dictionaryWithDictionary:[self provinces]];
 	if (!provinces) return;
 	if (!cityId) return;
-	if (!areas || areas.count == 0) return;
+	if (!areas) return;
 	NSMutableDictionary *province = [NSMutableDictionary dictionaryWithDictionary:[provinces objectForKey:provinceId]];
 	if ([province objectForKey:@"items"])
 	{

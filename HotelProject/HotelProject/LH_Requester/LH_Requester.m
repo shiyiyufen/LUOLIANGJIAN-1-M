@@ -92,11 +92,24 @@
          {
              NSError *error = nil;
              NSDictionary *objects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-			 
-			 dispatch_sync(dispatch_get_main_queue(), ^{
-				 //返回数据
-				 handler(objects,@"OK",LH_RequesterrorNone);
-			 });
+			 if (error)
+			 {
+				 if (error.code == 3840)
+				 {
+					 NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+					 dispatch_sync(dispatch_get_main_queue(), ^{
+						 //返回数据
+						 handler(s,@"OK",LH_RequesterrorNone);
+					 });
+					 
+				 }
+			 }else
+			 {
+				 dispatch_sync(dispatch_get_main_queue(), ^{
+					 //返回数据
+					 handler(objects,@"OK",LH_RequesterrorNone);
+				 });
+			 }
          }
          else if(error != nil && error.code == TimeOutErrorCode)//请求超时
          {

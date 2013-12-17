@@ -12,9 +12,23 @@
 
 @implementation DataHelper
 
++ (void)sendMsgForUser:(NSString *)username password:(NSString *)password mobile:(NSString *)mobile content:(NSString *)content completion:(void(^)(NSDictionary *resultInfo))handler
+{
+	NSString *url = [NSString stringWithFormat:@"http://%@:%@/CPDXT/SendSms?commandID=3&username=%@&password=%@&mobile=%@&content=%@&needReport=0",@"61.156.38.47",@"8080",username,password,mobile,content];
+//	NSDictionary *info = @{@"commandID": @"3",@"username": username,@"commandID": @"3",@"commandID": @"3",@"commandID": @"3",@"commandID": @"3"};
+	[[LH_ConnectPool sharedConnectionPool] setRequestMethodGet:NO];
+    [[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url handlerDic:^(NSDictionary *dictionary, NSString *message, int error) {
+		[[LH_ConnectPool sharedConnectionPool] setRequestMethodGet:YES];
+        if (error == LH_RequesterrorNone)
+        {
+            handler(dictionary);
+        }else handler(nil);
+    }];
+}
+
 + (void)getResiterWithPhone:(NSString *)phone account:(NSString *)account email:(NSString *)email pwd:(NSString *)pwd completion:(void(^)(NSDictionary *resultInfo))handler
 {
-    NSString *url = [NSString stringWithFormat:@"%@personRigister!addPersonInfo.do?person_tel=%@&person_account=%@&person_email=%@&person_pwd=%@",BASE_URL,phone,account,email,pwd];
+    NSString *url = [NSString stringWithFormat:@"%@personRigister!addPersonInfo.do?personmobilenumber=%@&personaccount=%@&personemail=%@&personpwd=%@",BASE_URL,phone,@"TEST12345678",email,pwd];
     [[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url handlerDic:^(NSDictionary *dictionary, NSString *message, int error) {
         if (error == LH_RequesterrorNone)
         {
@@ -25,7 +39,7 @@
 
 + (void)getResiterWithPhone:(NSString *)phone account:(NSString *)account sex:(NSString *)sex name:(NSString *)name area:(NSString *)areaID address:(NSString *)address email:(NSString *)email pwd:(NSString *)pwd completion:(void(^)(NSDictionary *resultInfo))handler
 {
-    NSString *url = [NSString stringWithFormat:@"%@personRigister!addPersonInfo.do?person_tel=%@&person_account=%@&person_email=%@&person_pwd=%@&person_sex=%@&person_name=%@&person_adress=%@&person_adressdetail=%@",BASE_URL,phone,account,email,pwd,sex,name,areaID,address];
+    NSString *url = [NSString stringWithFormat:@"%@personRigister!addPersonInfo.do?personmobilenumber=%@&personaccount=%@&personemail=%@&personpwd=%@&personsex=%@&personname=%@&areasid=%@&personaddressdetail=%@",BASE_URL,phone,account,email,pwd,sex,name,areaID,address];
     [[LH_ConnectPool sharedConnectionPool] asyConnectWithAddress:url handlerDic:^(NSDictionary *dictionary, NSString *message, int error) {
         if (error == LH_RequesterrorNone)
         {

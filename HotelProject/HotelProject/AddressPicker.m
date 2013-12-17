@@ -14,6 +14,8 @@
 @property (nonatomic,strong) UIBarButtonItem *titleItem;
 @property (nonatomic,strong) NSString *province,*city,*address;
 @property (nonatomic,strong) NSString *areaID;
+
+@property (nonatomic,strong) NSArray *sortedProvincesKeys;
 @end
 
 @implementation AddressPicker
@@ -50,6 +52,28 @@
     return self;
 }
 
+- (NSArray *)sortArray:(NSArray *)keys
+{
+	if (keys && keys.count)
+	{
+		NSArray *sortArray = [keys sortedArrayUsingComparator:^NSComparisonResult(NSString *obj1, NSString *obj2)
+		{
+			return ([obj1 localizedCompare:obj2]);
+		}];
+		return sortArray;
+	}
+	return keys;
+}
+
+- (NSArray *)sortedProvincesKeys
+{
+	if (_sortedProvincesKeys == nil)
+	{
+		_sortedProvincesKeys = [self sortArray:[[self provinces] allKeys]];
+	}
+	return _sortedProvincesKeys;
+}
+
 //- (void)configureProvinces:(NSArray *)provinces
 //{
 //    self.provinces = provinces;
@@ -65,6 +89,29 @@
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(didMakeSureWithTitle:areaID:)])
     {
+		int n1 = [self.picker numberOfRowsInComponent:0];
+		if (n1)
+		{
+			int n2 = [self.picker numberOfRowsInComponent:1];
+			if (n2)
+			{
+				int n3 = [self.picker numberOfRowsInComponent:2];
+				if (n3)
+				{
+					NSString *pKey = [self.sortedProvincesKeys objectAtIndex:[self.picker selectedRowInComponent:0]];
+					NSDictionary *cities = [[self.provinces objectForKey:pKey] objectForKey:@"items"];
+					NSString *cKey = [[self sortArray:[cities allKeys]] objectAtIndex:[self.picker selectedRowInComponent:1]];
+					NSDictionary *areas = [[cities objectForKey:cKey] objectForKey:@"items"];
+					self.areaID = [[self sortArray:[areas allKeys]] objectAtIndex:[self.picker selectedRowInComponent:2]];
+				}else
+				{
+					NSString *pKey = [self.sortedProvincesKeys objectAtIndex:[self.picker selectedRowInComponent:0]];
+					NSDictionary *cities = [[self.provinces objectForKey:pKey] objectForKey:@"items"];
+					
+					self.areaID = [[self sortArray:[cities allKeys]] objectAtIndex:[self.picker selectedRowInComponent:1]];
+				}
+			}else self.areaID = [self.sortedProvincesKeys objectAtIndex:[self.picker selectedRowInComponent:0]];
+		}else return;
         [self.delegate didMakeSureWithTitle:[NSString stringWithFormat:@"%@-%@-%@",self.province,self.city ? self.city : @"",self.address ? self.address : @""] areaID:self.areaID];
         [self cancle];
     }
@@ -85,26 +132,34 @@
     {
         case 0:
         {
-            NSArray *keys = [self.provinces allKeys];
+            NSArray *keys = [self sortedProvincesKeys];
 			return [[self.provinces objectForKey:keys[row]] objectForKey:@"provincename"];
             break;
         }
         case 1:
         {
-            NSString *key = [[self.provinces allKeys] objectAtIndex:[pickerView selectedRowInComponent:0]];
+			//省份id
+            NSString *key = [[self sortedProvincesKeys] objectAtIndex:[pickerView selectedRowInComponent:0]];
 			NSDictionary *cities = [[self.provinces objectForKey:key] objectForKey:@"items"];
 			self.cities = cities;
-			NSArray *keys = [cities allKeys];
+			if (cities.count == 0)
+			{
+				return @"";
+			}
+			NSArray *keys = [self sortArray:[cities allKeys]];
 			return [[cities objectForKey:keys[row]] objectForKey:@"cityname"];
             break;
         }
         case 2:
         {
-            NSString *key = [[self.cities allKeys] objectAtIndex:[pickerView selectedRowInComponent:1]];
-			NSDictionary *areas = [[self.cities objectForKey:key] objectForKey:@"items"];
-			self.areas = areas;
-			NSArray *keys = [areas allKeys];
-			return [[areas objectForKey:keys[row]] objectForKey:@"areasname"];
+			if (self.cities.count)
+			{
+				NSString *key = [[self sortArray:[self.cities allKeys]] objectAtIndex:[pickerView selectedRowInComponent:1]];
+				NSDictionary *areas = [[self.cities objectForKey:key] objectForKey:@"items"];
+				self.areas = areas;
+				NSArray *keys = [self sortArray:[areas allKeys]];
+				return [[areas objectForKey:keys[row]] objectForKey:@"areasname"];
+			}else return @"";
             break;
         }
         default:
@@ -126,43 +181,55 @@
 	{
 		case 0:
 		{
-			self.province = [[self.provinces objectForKey:[[self.provinces allKeys] objectAtIndex:0]] objectForKey:@"provincename"];
+			self.province = [[self.provinces objectForKey:[[self sortedProvincesKeys] objectAtIndex:0]] objectForKey:@"provincename"];
 			count = [[self provinces] count];
 			break;
 		}
 		case 1:
 		{
-			NSString *key = [[self.provinces allKeys] objectAtIndex:[pickerView selectedRowInComponent:0]];
+			//第一个省份id
+			NSString *key = [[self sortedProvincesKeys] objectAtIndex:[pickerView selectedRowInComponent:0]];
 			NSDictionary *cities = [[self.provinces objectForKey:key] objectForKey:@"items"];
-			if (cities.count)
+			self.cities = cities;
+			if (cities && cities.count)
 			{
-				self.cities = cities;
-				self.city = [[cities objectForKey:[[cities allKeys] objectAtIndex:0]] objectForKey:@"cityname"];
+				self.city = [[cities objectForKey:[[self sortArray:[cities allKeys]] objectAtIndex:0]] objectForKey:@"cityname"];
 				count = cities.count;
+			}else
+			{
+				if (cities && cities.count == 0)
+				{
+					count = 0;
+				}
+				self.city = @"";
+				self.address = @"";
 			}
 			break;
 		}
 		case 2:
 		{
-			NSString *key = [[self.cities allKeys] objectAtIndex:[pickerView selectedRowInComponent:1]];
-			NSDictionary *areas = [[self.cities objectForKey:key] objectForKey:@"items"];
-			if (areas.count)
+			if (self.cities.count)
 			{
-				self.areas = areas;
-				self.address = [[areas objectForKey:[[areas allKeys] objectAtIndex:0]] objectForKey:@"areasname"];
-				count = areas.count;
-				self.areaID = [[areas allKeys] objectAtIndex:0];
-			}
+				NSString *key = [[self sortArray:[self.cities allKeys]] objectAtIndex:[pickerView selectedRowInComponent:1]];
+				NSDictionary *areas = [[self.cities objectForKey:key] objectForKey:@"items"];
+				if (areas.count)
+				{
+					self.areas = areas;
+					self.address = [[areas objectForKey:[[self sortArray:[areas allKeys]] objectAtIndex:0]] objectForKey:@"areasname"];
+					count = areas.count;
+//					self.areaID = [[self sortArray:[areas allKeys]] objectAtIndex:0];
+				}else self.address = @"";
+			}else count = 0;
 			break;
 		}
 		default:
 			break;
 	}
 	NSString *text = self.province;
-    if (self.city)
+    if (self.city.length)
     {
         text = [text stringByAppendingFormat:@"-%@",self.city];
-        if (self.address)
+        if (self.address.length)
         {
             text = [text stringByAppendingFormat:@"-%@",self.address];
         }
@@ -177,45 +244,49 @@
     {
         case 0:
         {
-            self.province = [NSString stringWithFormat:@"四川省%d",row];
-			NSString *key = [[self.provinces allKeys] objectAtIndex:[pickerView selectedRowInComponent:0]];
+			NSString *key = [[self sortedProvincesKeys] objectAtIndex:[pickerView selectedRowInComponent:0]];
 			NSDictionary *cities = [[self.provinces objectForKey:key] objectForKey:@"items"];
-			if (cities.count)
+			if (cities)
 			{
 				if (pickerView) [pickerView reloadComponent:1];
 				[pickerView reloadComponent:2];
 			}
 
-			self.province = [[self.provinces objectForKey:[[self.provinces allKeys] objectAtIndex:row]] objectForKey:@"provincename"];
+			self.province = [[self.provinces objectForKey:[[self sortedProvincesKeys] objectAtIndex:row]] objectForKey:@"provincename"];
             break;
         }
         case 1:
         {
-            self.city = [NSString stringWithFormat:@"南充市%d",row];
-			NSString *key = [[self.cities allKeys] objectAtIndex:[pickerView selectedRowInComponent:1]];
-			NSDictionary *areas = [[self.cities objectForKey:key] objectForKey:@"items"];
-			if (areas.count)
+			if (self.cities.count)
 			{
-				if (pickerView) [pickerView reloadComponent:2];
+				NSString *key = [[self sortArray:[self.cities allKeys]] objectAtIndex:[pickerView selectedRowInComponent:1]];
+				NSDictionary *areas = [[self.cities objectForKey:key] objectForKey:@"items"];
+				if (areas.count)
+				{
+					if (pickerView) [pickerView reloadComponent:2];
+				}
+				self.city = [[self.cities objectForKey:[[self sortArray:[self.cities allKeys]] objectAtIndex:row]] objectForKey:@"cityname"];
+			}else
+			{
+				self.city = @"";
+				self.address = @"";
 			}
-			self.city = [[self.cities objectForKey:[[self.cities allKeys] objectAtIndex:row]] objectForKey:@"cityname"];
+			
 			break;
         }
         case 2:
         {
-            self.address = [NSString stringWithFormat:@"顺庆区%d",row];
-			self.address = [[self.areas objectForKey:[[self.areas allKeys] objectAtIndex:row]] objectForKey:@"areasname"];
-			self.areaID = [[self.areas allKeys] objectAtIndex:row];
+			self.address = [[self.areas objectForKey:[[self sortArray:[self.areas allKeys]] objectAtIndex:row]] objectForKey:@"areasname"];
             break;
         }
         default:
             break;
     }
     NSString *text = self.province;
-    if (self.city)
+    if (self.city.length)
     {
         text = [text stringByAppendingFormat:@"-%@",self.city];
-        if (self.address)
+        if (self.address.length)
         {
             text = [text stringByAppendingFormat:@"-%@",self.address];
         }

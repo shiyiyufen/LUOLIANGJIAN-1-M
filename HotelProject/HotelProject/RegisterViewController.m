@@ -43,7 +43,7 @@
     
     self.imageView_Male.image = NAME(@"icon_30_1");
     self.imageView_Female.image = NAME(@"icon_30");
-    self.sexString = @"0";
+    self.sexString = @"男";
     self.scrollView_Right.contentSize = CGSizeMake(0, 550);
     
     
@@ -111,12 +111,12 @@
     {
         self.imageView_Male.image = NAME(@"icon_30");
         self.imageView_Female.image = NAME(@"icon_30_1");
-        self.sexString = @"1";
+        self.sexString = @"女";
     }else
     {
         self.imageView_Male.image = NAME(@"icon_30_1");
         self.imageView_Female.image = NAME(@"icon_30");
-        self.sexString = @"0";
+        self.sexString = @"男";
     }
 }
 
@@ -175,9 +175,11 @@
 					UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 					MessageCheckViewController *controller = [main instantiateViewControllerWithIdentifier:@"MessageCheckViewController"];
 					controller.phone = phone;
+					controller.type = 0;
 					controller.sex = self.sexString;
 					controller.pwd = pwd;
 					controller.email = email;
+					controller.account = account;
 					[controller setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
 					[self.navigationController pushViewControllerRetro:controller animated:YES];
 				}
@@ -186,6 +188,15 @@
         
     }else
     {
+		self.textField_Phone2.text = @"15928418752";
+		self.textField_Account2.text = @"TEST02";
+		self.textField_Name.text = @"HE";
+		self.textField_DetailAddress.text = @"SSSS";
+		self.textField_Email2.text = @"1267817@qq.com";
+		self.textField_Pwd2.text = @"123456";
+		self.textField_PwdAgain2.text = @"123456";
+		self.areaID = @"310101";
+		
         NSString *phone = self.textField_Phone2.text;
         if (0 == phone.length)
         {
@@ -201,7 +212,7 @@
 		[[Tool shared] showWaiting];
 		[DataHelper getCheckAccountWithAccount:account completion:^(NSDictionary *resultInfo)
 		 {
-			 [[Tool shared] hideTip];
+			 
 			 if (resultInfo)
 			 {
 				 if ([[resultInfo objectForKey:@"result"] intValue] == 1)//已经注册
@@ -220,7 +231,7 @@
 						 [[Tool shared] showTip:@"请选择地区"];
 						 return;
 					 }
-					 NSString *address = self.textField_Address.text;
+					 NSString *address = self.textField_DetailAddress.text;
 					 if (0 == address.length)
 					 {
 						 [[Tool shared] showTip:@"请输入您的地址"];
@@ -249,20 +260,22 @@
 						 [[Tool shared] showTip:@"两次输入的密码不一致"];
 						 return;
 					 }
-					 
+					 [[Tool shared] hideTip];
 					 UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 					 MessageCheckViewController *controller = [main instantiateViewControllerWithIdentifier:@"MessageCheckViewController"];
 					 controller.phone = phone;
+					 controller.type = 1;
 					 controller.name = name;
 					 controller.sex = self.sexString;
 					 controller.address = address;
+					 controller.account = account;
 					 controller.areaID = self.areaID;
 					 controller.pwd = pwd;
 					 controller.email = email;
 					 [controller setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
 					 [self.navigationController pushViewControllerRetro:controller animated:YES];
 				 }
-			 }
+			 }else [[Tool shared] hideTip];
 			 
 		 }];
         

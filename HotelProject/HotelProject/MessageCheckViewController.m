@@ -9,8 +9,8 @@
 #import "MessageCheckViewController.h"
 @import MessageUI;
 @interface MessageCheckViewController ()<UITextFieldDelegate>
-@property (nonatomic,assign) BOOL checked,enabled,lastKeyString;
-
+@property (nonatomic,assign) BOOL checked,enabled;
+@property (nonatomic,strong) NSString *lastKeyString;
 @property (nonatomic,strong) NSTimer *timer;
 @end
 
@@ -80,7 +80,7 @@ static int leftTime = 5;
 {
     leftTime --;
 	[self.btn_ReGet setTitle:[NSString stringWithFormat:@"%d 秒后重新获取",leftTime] forState:UIControlStateNormal];
-	if (leftTime == 0)
+	if (leftTime <= 0)
     {
         [self.btn_ReGet setTitle:[NSString stringWithFormat:@"重新获取验证码"] forState:UIControlStateNormal];
         [self stopTimer];
@@ -89,8 +89,13 @@ static int leftTime = 5;
 
 - (IBAction)action_Register:(id)sender
 {
+	if (self.textField_Msg.text.length != 6)
+	{
+		[[Tool shared] showTip:@"请输入6位验证码"];
+		return;
+	}
 	//check
-	if (1)
+	if ([self.lastKeyString isEqualToString:self.textField_Msg.text])
 	{
 		self.enabled = YES;
 		self.checked = YES;
@@ -134,12 +139,22 @@ static int leftTime = 5;
 	if (self.enabled)
 	{
 		self.enabled = NO;
-//		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"sms://%@",self.label_Phone.text]]];
-		if (1)
-		{
-			NSLog(@"发送成功");
-			[self startTimer];
-		}
+		self.lastKeyString = [NSString stringWithFormat:@"%d%d%d%d%d%d",arc4random() % 10,arc4random() % 10,arc4random() % 10,arc4random() % 10,arc4random() % 10,arc4random() % 10];
+		[DataHelper sendMsgForUser:MSG_NAME password:MSG_PWD mobile:self.phone content:[NSString stringWithFormat:@"尊敬的客户，您正在使用联和网【手机验证】，您的验证码是：%@【东泰联合】",self.lastKeyString] completion:^(NSDictionary *resultInfo)
+		 {
+			if (resultInfo && [resultInfo isKindOfClass:[NSString class]])
+			{
+				NSString *result = (NSString *)resultInfo;
+				if (result)
+					//if ([result intValue] == 0)
+				{
+					NSLog(@"发送成功");
+					self.textField_Msg.text = self.lastKeyString;
+					[self startTimer];
+				}
+			}
+		}];
+		
 	}
 }
 

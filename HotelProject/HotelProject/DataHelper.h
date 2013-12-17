@@ -19,6 +19,13 @@
 + (void)getResiterWithPhone:(NSString *)phone account:(NSString *)account email:(NSString *)email pwd:(NSString *)pwd completion:(void(^)(NSDictionary *resultInfo))handler;
 
 /**
+ * 发送短信验证码
+ * @param  http://平台ip:平台端口号/CPDXT/SendSms?commandID=3&username=用户名&password=密码&mobile=手机号码&content=发送内容&needReport=0
+ * @return
+ */
++ (void)sendMsgForUser:(NSString *)username password:(NSString *)password mobile:(NSString *)mobile content:(NSString *)content completion:(void(^)(NSDictionary *resultInfo))handler;
+
+/**
  * 完整注册接口
  * @param
  * @return result 为1  注册成功  2 注册失败 msg 对应的信息
