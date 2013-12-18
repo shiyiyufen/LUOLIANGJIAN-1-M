@@ -7,6 +7,7 @@
 //
 
 #import "MessageCheckViewController.h"
+#import "LogViewController.h"
 @import MessageUI;
 @interface MessageCheckViewController ()<UITextFieldDelegate>
 @property (nonatomic,assign) BOOL checked,enabled;
@@ -115,6 +116,7 @@ static int leftTime = 5;
 				 if ([[resultInfo objectForKey:@"result"] intValue] == 1)
 				 {
 					 [[Tool shared] showTip:@"注册成功!"];
+                     [self popToLogin];
 				 }else [[Tool shared] showTip:resultInfo[@"msg"] ? resultInfo[@"msg"] : @"注册失败"];
 			 }else [[Tool shared] hideTip];
 		 }];
@@ -128,10 +130,22 @@ static int leftTime = 5;
 				 if ([[resultInfo objectForKey:@"result"] intValue] == 1)
 				 {
 					 [[Tool shared] showTip:@"注册成功!"];
+                     [self popToLogin];
 				 }else [[Tool shared] showTip:resultInfo[@"msg"] ? resultInfo[@"msg"] : @"注册失败"];
 			 }else [[Tool shared] hideTip];
 		 }];
 	}
+}
+
+- (void)popToLogin
+{
+    for (UIViewController *vc in self.navigationController.viewControllers)
+    {
+        if ([vc isKindOfClass:[LogViewController class]])
+        {
+            [self.navigationController popToViewController:vc animated:YES];
+        }
+    }
 }
 
 - (IBAction)action_SendMsg:(UIButton *)sender

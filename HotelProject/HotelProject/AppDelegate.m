@@ -15,15 +15,15 @@
     // Override point for customization after application launch.
     [[UINavigationBar appearance] setBackgroundImage:NAME(@"icon_1.png") forBarMetrics:UIBarMetricsDefault];
 	
-	if (![[Tool shared] provinces])
-	{
-		[DataHelper getProvincesWithCompletion:^(NSArray *provinces) {
-			if (provinces.count)
-			{
-				[[Tool shared] saveProvinces:provinces];
-			}
-		}];
-	}
+//	if (![[Tool shared] provinces])
+//	{
+//		[DataHelper getProvincesWithCompletion:^(NSArray *provinces) {
+//			if (provinces.count)
+//			{
+//				[[Tool shared] saveProvinces:provinces];
+//			}
+//		}];
+//	}
 	
 	
 //	[DataHelper getCitiesWithProvince:@"210000" completion:^(NSArray *cities) {

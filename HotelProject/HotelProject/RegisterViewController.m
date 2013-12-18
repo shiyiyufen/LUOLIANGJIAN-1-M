@@ -189,7 +189,7 @@
     }else
     {
 		self.textField_Phone2.text = @"15928418752";
-		self.textField_Account2.text = @"TEST02";
+		self.textField_Account2.text = @"TEST023";
 		self.textField_Name.text = @"HE";
 		self.textField_DetailAddress.text = @"SSSS";
 		self.textField_Email2.text = @"1267817@qq.com";
@@ -217,7 +217,7 @@
 			 {
 				 if ([[resultInfo objectForKey:@"result"] intValue] == 1)//已经注册
 				 {
-					 [[Tool shared] showTip:@"注册账号已经被注册"];
+					 [[Tool shared] showTip:@"此账号已经被注册"];
 				 }else
 				 {
 					 NSString *name = self.textField_Name.text;
@@ -286,14 +286,57 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
 	lastField = textField;
+    
+    
 	if ([self.btn_Register2 isSelected])
 	{
+        if (lastField != self.textField_Address)
+        {
+            float y = CGRectGetMaxY(lastField.frame);
+            if(self.scrollView_Right.frame.size.height - 216 < y)
+            {
+                self.scrollView_Right.contentOffset = CGPointMake(0, 216 + y - self.scrollView_Right.frame.size.height);
+            }
+        }else
+        {
+            float y = CGRectGetMaxY(lastField.frame);
+            if(self.scrollView_Right.frame.size.height - 260 < y)
+            {
+                self.scrollView_Right.contentOffset = CGPointMake(0, 260 + y - self.scrollView_Right.frame.size.height);
+            }
+        }
 		self.scrollView_Right.contentSize = CGSizeMake(0, 660);
 	}else
 	{
+        float y = CGRectGetMaxY(lastField.frame);
+        if(self.scrollView_left.frame.size.height - 216 < y)
+        {
+            self.scrollView_left.contentOffset = CGPointMake(0, 216 + y - self.scrollView_left.frame.size.height);
+        }
 		self.scrollView_left.contentSize = CGSizeMake(0, 500);
 	}
 	return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if ((textField == self.textField_Account2 && [self.btn_Register2 isSelected]) || (textField == self.textField_Account1 && [self.btn_Register1 isSelected]))
+    {
+        if (textField.text.length == 0) return;
+        
+        [[Tool shared] showWaiting:@"账号验证中..." forView:self.view];
+        [DataHelper getCheckAccountWithAccount:textField.text completion:^(NSDictionary *resultInfo)
+        {
+            [[Tool shared] hideTipForView:self.view];
+            if (resultInfo)
+            {
+                if ([[resultInfo objectForKey:@"result"] intValue] == 1)//已经注册
+                {
+                    [[Tool shared] showTip:@"此账号已经被注册"];
+                }
+            }else [[Tool shared] hideTipForView:self.view];
+        }];
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

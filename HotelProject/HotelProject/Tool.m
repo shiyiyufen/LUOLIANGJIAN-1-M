@@ -49,7 +49,7 @@ static const int navBarViewTag = 100;
 
 - (NSDictionary *)provinces
 {
-	NSString *path = [DOCUMENTPATH stringByAppendingPathComponent:@"address.plist"];
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"address.plist" ofType:nil];
 	NSDictionary *array = [NSDictionary dictionaryWithContentsOfFile:path];
 	return array;
 }
