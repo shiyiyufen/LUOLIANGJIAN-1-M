@@ -18,7 +18,9 @@
 #import "PriceLabel.h"
 #import "DataHelper.h"
 
-#import "TencentOpenAPI.framework/Headers/TencentOAuth.h"
+#import <TencentOpenAPI/TencentOAuth.h>
+//#import <>
+//#import <TencentOpenAPI.framework/Headers/sdkdef.h>
 #import "SinaWeibo.h"
 //#import "sdkCall.h"
 #endif

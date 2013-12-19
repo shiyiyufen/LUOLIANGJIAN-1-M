@@ -33,16 +33,16 @@
 }
 
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-	 NSLog(@"url :%@// APP:%@",url,sourceApplication);
-	return [TencentOAuth HandleOpenURL:url];
-}
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-{
-	return [TencentOAuth HandleOpenURL:url];
-}
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+//{
+//	 NSLog(@"url :%@// APP:%@",url,sourceApplication);
+//	return [TencentOAuth HandleOpenURL:url];
+//}
+//
+//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+//{
+//	return [TencentOAuth HandleOpenURL:url];
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

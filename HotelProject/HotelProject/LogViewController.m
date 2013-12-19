@@ -9,12 +9,13 @@
 #import "LogViewController.h"
 #import "RegisterViewController.h"
 
-@interface LogViewController ()<UIScrollViewDelegate,UITextFieldDelegate,TencentSessionDelegate,TencentLoginDelegate,SinaWeiboDelegate>
+@interface LogViewController ()<UIScrollViewDelegate,UITextFieldDelegate,SinaWeiboDelegate>
+//@interface LogViewController ()<UIScrollViewDelegate,UITextFieldDelegate,TencentSessionDelegate,TencentLoginDelegate,SinaWeiboDelegate>
 {
 	BOOL _isLogined;
 	time_t                  loginTime;
 }
-@property (retain, nonatomic) TencentOAuth *tencentOAuth;
+//@property (retain, nonatomic) TencentOAuth *tencentOAuth;
 @property (readonly, nonatomic) SinaWeibo *sinaWeibo;
 @end
 
@@ -33,7 +34,7 @@
 {
     [super viewDidLoad];
 	
-	self.tencentOAuth = [[TencentOAuth alloc] initWithAppId:__TencentDemoAppid_ andDelegate:self];
+//	self.tencentOAuth = [[TencentOAuth alloc] initWithAppId:__TencentDemoAppid_ andDelegate:self];
 	
 	_sinaWeibo = [[SinaWeibo alloc] initWithAppKey:kAppKey appSecret:kAppSecret appRedirectURI:kRedirectURI andDelegate:self];
     [self addRectVersionJudge];
@@ -60,25 +61,25 @@
 
 - (void)tencentDidLogin
 {
-    if (NO == _isLogined)
-    {
-        _isLogined = YES;
-    }
-    
-	
-	if (_tencentOAuth.accessToken && 0 != [_tencentOAuth.accessToken length])
-	{
-		// 记录登录用户的OpenID、Token以及过期时间
-	}
-	else
-	{
-		//@"登录不成功 没有获取accesstoken";
-	}
-	 NSLog(@"_tencentOAuth.accessToken:%@",_tencentOAuth.accessToken);
-	 NSLog(@"_tencentOAuth.id:%@",_tencentOAuth.openId);
-	
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"结果" message:@"登录成功" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil];
-    [alertView show];
+//    if (NO == _isLogined)
+//    {
+//        _isLogined = YES;
+//    }
+//    
+//	
+//	if (_tencentOAuth.accessToken && 0 != [_tencentOAuth.accessToken length])
+//	{
+//		// 记录登录用户的OpenID、Token以及过期时间
+//	}
+//	else
+//	{
+//		//@"登录不成功 没有获取accesstoken";
+//	}
+//	 NSLog(@"_tencentOAuth.accessToken:%@",_tencentOAuth.accessToken);
+//	 NSLog(@"_tencentOAuth.id:%@",_tencentOAuth.openId);
+//	
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"结果" message:@"登录成功" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil];
+//    [alertView show];
 }
 
 - (void)tencentDidNotLogin:(BOOL)cancelled
@@ -178,13 +179,13 @@
 	time_t currentTime;
 	time(&currentTime);
 	
-	if ((currentTime - loginTime) > 2)
-	{
-		NSArray *permissions = [NSArray arrayWithObjects:kOPEN_PERMISSION_GET_USER_INFO, nil];
-		[self.tencentOAuth authorize:permissions inSafari:NO];
-		
-		loginTime = currentTime;
-	}
+//	if ((currentTime - loginTime) > 2)
+//	{
+//		NSArray *permissions = [NSArray arrayWithObjects:kOPEN_PERMISSION_GET_USER_INFO, nil];
+//		[self.tencentOAuth authorize:permissions inSafari:NO];
+//		
+//		loginTime = currentTime;
+//	}
 }
 
 #pragma mark - Scroll

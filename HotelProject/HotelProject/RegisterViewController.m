@@ -188,14 +188,14 @@
         
     }else
     {
-		self.textField_Phone2.text = @"15928418752";
-		self.textField_Account2.text = @"TEST023";
-		self.textField_Name.text = @"HE";
-		self.textField_DetailAddress.text = @"SSSS";
-		self.textField_Email2.text = @"1267817@qq.com";
-		self.textField_Pwd2.text = @"123456";
-		self.textField_PwdAgain2.text = @"123456";
-		self.areaID = @"310101";
+//		self.textField_Phone2.text = @"15928418752";
+//		self.textField_Account2.text = @"TEST023";
+//		self.textField_Name.text = @"HE";
+//		self.textField_DetailAddress.text = @"SSSS";
+//		self.textField_Email2.text = @"1267817@qq.com";
+//		self.textField_Pwd2.text = @"123456";
+//		self.textField_PwdAgain2.text = @"123456";
+//		self.areaID = @"310101";
 		
         NSString *phone = self.textField_Phone2.text;
         if (0 == phone.length)
@@ -213,7 +213,7 @@
 		[DataHelper getCheckAccountWithAccount:account completion:^(NSDictionary *resultInfo)
 		 {
 			 
-			 if (resultInfo)
+			 if (resultInfo && [resultInfo isKindOfClass:[NSDictionary class]])
 			 {
 				 if ([[resultInfo objectForKey:@"result"] intValue] == 1)//已经注册
 				 {
@@ -295,7 +295,7 @@
             float y = CGRectGetMaxY(lastField.frame);
             if(self.scrollView_Right.frame.size.height - 216 < y)
             {
-                self.scrollView_Right.contentOffset = CGPointMake(0, 216 + y - self.scrollView_Right.frame.size.height);
+                self.scrollView_Right.contentOffset = CGPointMake(0, 260 + y - self.scrollView_Right.frame.size.height);
             }
         }else
         {
@@ -311,7 +311,7 @@
         float y = CGRectGetMaxY(lastField.frame);
         if(self.scrollView_left.frame.size.height - 216 < y)
         {
-            self.scrollView_left.contentOffset = CGPointMake(0, 216 + y - self.scrollView_left.frame.size.height);
+            self.scrollView_left.contentOffset = CGPointMake(0, 260 + y - self.scrollView_left.frame.size.height);
         }
 		self.scrollView_left.contentSize = CGSizeMake(0, 500);
 	}
